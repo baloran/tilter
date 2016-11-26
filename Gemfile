@@ -38,6 +38,9 @@ group :development, :test do
 
   # Ruby coding standart
   gem 'rubocop'
+
+  # Unit testing
+  gem 'rspec'
 end
 
 group :development do

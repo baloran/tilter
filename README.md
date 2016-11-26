@@ -1,24 +1,20 @@
-# README
+# Substr.ac
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+(build)[https://travis-ci.com/baloran/substr.ac.svg?token=RytHbpdgKVBYdihAv3n5&branch=master]
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+```
+bundle install
+```
 
-* System dependencies
+## Make the awesome
 
-* Configuration
+```
+rake db:drop && rake db:create && rake db:migrate && rake db:seed
+rails s
+```
 
-* Database creation
+## Guildelines
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(ruby style guide)[https://github.com/bbatsov/ruby-style-guide]

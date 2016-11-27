@@ -1,0 +1,20 @@
+{
+  "name": "substrac",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

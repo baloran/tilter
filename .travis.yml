@@ -1,0 +1,7 @@
+sudo: false
+
+language: ruby
+
+before_script:
+  - bundle exec rspec
+  - bundle exec rubocop

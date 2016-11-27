@@ -1,6 +1,6 @@
 # Substr.ac
 
-(build)[https://travis-ci.com/baloran/substr.ac.svg?token=RytHbpdgKVBYdihAv3n5&branch=master]
+![build](https://travis-ci.com/baloran/substr.ac.svg?token=RytHbpdgKVBYdihAv3n5&branch=master)
 
 ## Install
 
@@ -17,4 +17,4 @@ rails s
 
 ## Guildelines
 
-(ruby style guide)[https://github.com/bbatsov/ruby-style-guide]
+[ruby style guide](https://github.com/bbatsov/ruby-style-guide)

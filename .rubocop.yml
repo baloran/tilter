@@ -2,15 +2,20 @@ Rails:
   Enabled: true
 
 AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
   Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-    - 'bin/**/*'
+    - ./**/config.ru
+    - ./**/Rakefile
+    - ./**/Gemfile
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - bin/**/*
+    - vendor/**/*
     - !ruby/regexp /old_and_unused\.rb$/
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
   Enabled: false

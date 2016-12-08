@@ -13,10 +13,8 @@ class Tweet < ApplicationRecord
   validates :content, length: {
     minimum: MIN_CONTENT_LENGTH,
     maximum: MAX_CONTENT_LENGTH,
-    message: %(
-      Your tilt must be between #{MIN_CONTENT_LENGTH} and
-      #{MAX_CONTENT_LENGTH} characters
-    ),
+    message: "Your tilt must be between #{MIN_CONTENT_LENGTH} and "\
+      "#{MAX_CONTENT_LENGTH} characters",
     allow_nil: false, allow_blank: false
   }
 end

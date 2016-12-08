@@ -13,10 +13,8 @@ class User < ApplicationRecord
   validates :username, length: {
     minimum: MIN_USERNAME_LENGTH,
     maximum: MAX_USERNAME_LENGTH,
-    message: %(
-      Your username must be between #{MIN_USERNAME_LENGTH} and
-      #{MAX_USERNAME_LENGTH} characters
-    ),
+    message: "Your username must be between #{MIN_USERNAME_LENGTH} and "\
+      "#{MAX_USERNAME_LENGTH} characters",
     allow_nil: false, allow_blank: false
   }
 
@@ -25,10 +23,8 @@ class User < ApplicationRecord
   validates :display_name, length: {
     minimum: MIN_DISPLAY_NAME_LENGTH,
     maximum: MAX_DISPLAY_NAME_LENGTH,
-    message: %(
-      Your display name must be between #{MIN_DISPLAY_NAME_LENGTH} and
-      #{MAX_DISPLAY_NAME_LENGTH} characters
-    ),
+    message: "Your display name must be between #{MIN_DISPLAY_NAME_LENGTH} and"\
+      "#{MAX_DISPLAY_NAME_LENGTH} characters",
     allow_nil: false, allow_blank: false
   }
 

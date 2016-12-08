@@ -128,4 +128,11 @@ RSpec.describe Tweet, type: :model do
     tweet.content = (0..500).map { 'X' }.join
     expect(tweet.valid?).to eq(false)
   end
+
+  it 'has a proper error message for content being too short or too long' do
+    user = create_valid_user
+
+    tweet = Tweet.create(user_id: user.id)
+    expect(tweet.errors.messages[:content].first).not_to be_empty
+  end
 end

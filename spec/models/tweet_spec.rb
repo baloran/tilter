@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Tweet, type: :model do
+  # Returns a valid user to avoid repetitions in tests
+  def create_valid_user
+    User.create(
+      username: 'baloran',
+      display_name: 'bal0ran',
+      password: 'password',
+      email: 'baloranandco@gmail.com'
+    )
+  end
+
   it 'can be created by an user' do
     user = create_valid_user
 
@@ -118,14 +128,4 @@ RSpec.describe Tweet, type: :model do
     tweet.content = (0..500).map { 'X' }.join
     expect(tweet.valid?).to eq(false)
   end
-end
-
-# Returns a valid user to avoid repetitions in tests
-def create_valid_user
-  User.create(
-    username: 'baloran',
-    display_name: 'bal0ran',
-    password: 'password',
-    email: 'baloranandco@gmail.com'
-  )
 end

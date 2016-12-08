@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :tweets, dependent: :destroy
   has_many :retweets, dependent: :destroy
+  has_many :likes, dependent: :destroy
   before_validation :assign_display_name
 
   MIN_USERNAME_LENGTH = 2

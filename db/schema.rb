@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208103547) do
+ActiveRecord::Schema.define(version: 20161208113350) do
+
+  create_table "retweets", force: :cascade do |t|
+    t.integer  "tweet_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tweet_hierarchies", id: false, force: :cascade do |t|
     t.integer "ancestor_id",   null: false

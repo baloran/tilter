@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable
 
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
+  has_many :retweets, dependent: :destroy
   before_validation :assign_display_name
 
   MIN_USERNAME_LENGTH = 2

@@ -1,6 +1,9 @@
-# Substr.ac
+# Tilter
+Tilter is a twitter-like webapp where you can post what made you tilt instead of
+useful informations.
+It was created to learn Rails and isn’t intended to be taken as a serious project.
 
-![build](https://travis-ci.com/baloran/substr.ac.svg?token=RytHbpdgKVBYdihAv3n5&branch=master)
+![build](https://travis-ci.com/baloran/tilter.svg?branch=master)
 
 ## Install
 
@@ -15,6 +18,15 @@ rake db:drop && rake db:create && rake db:migrate && rake db:seed
 rails s
 ```
 
-## Guildelines
+## To run the tests
 
-[ruby style guide](https://github.com/bbatsov/ruby-style-guide)
+```
+rake db:migrate RAILS_ENV=test
+rspec
+```
+
+## Guidelines
+
+[Ruby Styleguide](https://github.com/bbatsov/ruby-style-guide)
+
+[Linter](https://github.com/bbatsov/rubocop)

@@ -11,6 +11,31 @@ RSpec.describe Tweet, type: :model do
     expect(found.user).to eq(user)
   end
 
+  it 'can be deleted, deleting all of its children with it' do
+    user = create_valid_user
+
+    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    child_tweet = tweet.children.create(
+      content: 'I’m the children of the first tweet!',
+      user_id: user.id
+    )
+    child_tweet.children.create(
+      content: 'I’m a children of the second tweet!',
+      user_id: user.id
+    )
+
+    expect(tweet.children.size).to eq(1)
+    expect(tweet.descendants.size).to eq(2)
+
+    tweet.destroy
+
+    expect(tweet.children.size).to eq(0)
+    expect(tweet.descendants.size).to eq(0)
+
+    found = Tweet.last
+    expect(found).to eq(nil)
+  end
+
   it 'can have children tweets' do
     user = create_valid_user
 

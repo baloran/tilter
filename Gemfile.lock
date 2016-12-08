@@ -43,6 +43,9 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.6)
+    closure_tree (6.2.0)
+      activerecord (>= 4.1.0)
+      with_advisory_lock (>= 3.0.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -200,6 +203,9 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    with_advisory_lock (3.0.0)
+      activerecord (>= 3.2)
+      thread_safe
 
 PLATFORMS
   ruby
@@ -207,6 +213,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
+  closure_tree
   coffee-rails (~> 4.2)
   database_cleaner
   devise

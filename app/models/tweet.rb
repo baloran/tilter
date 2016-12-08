@@ -3,6 +3,7 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   has_many :retweets, dependent: :destroy
+  has_many :likes, dependent: :destroy
   # Add hierarchy to the model: every tweet can be the parent of other tweets,
   # that can have children themselves. We can easily get the root tweet with the
   # methods provided by the closure_tree gem.

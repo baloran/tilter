@@ -11,6 +11,73 @@ RSpec.describe Tweet, type: :model do
     expect(found.user).to eq(user)
   end
 
+  it 'can have children tweets' do
+    user = create_valid_user
+
+    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    child_tweet1 = tweet.children.create(
+      content: 'I’m the children of the first tweet!',
+      user_id: user.id
+    )
+    child_tweet2 = tweet.children.create(
+      content: 'I’m another children of the first tweet!',
+      user_id: user.id
+    )
+
+    expect(tweet.children).to be_a(ActiveRecord::Associations::CollectionProxy)
+    expect(tweet.children).to include(child_tweet1, child_tweet2)
+    expect(tweet.children.size).to eq(2)
+    expect(tweet.children[0].content).to eq(
+      'I’m the children of the first tweet!'
+    )
+    expect(tweet.children[1].content).to eq(
+      'I’m another children of the first tweet!'
+    )
+  end
+
+  it 'can have grandchildren tweets' do
+    user = create_valid_user
+
+    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    child_tweet = tweet.children.create(
+      content: 'I’m the children of the first tweet!',
+      user_id: user.id
+    )
+    child_tweet.children.create(
+      content: 'I’m a children of the second tweet!',
+      user_id: user.id
+    )
+
+    expect(tweet.children.size).to eq(1)
+    expect(child_tweet.children.size).to eq(1)
+    expect(tweet.descendants.size).to eq(2)
+  end
+
+  it 'has methods to retrieve its parent and root tweet' do
+    user = create_valid_user
+
+    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    child_tweet = tweet.children.create(
+      content: 'I’m the children of the first tweet!',
+      user_id: user.id
+    )
+    grandchild_tweet = child_tweet.children.create(
+      content: 'I’m a children of the second tweet!',
+      user_id: user.id
+    )
+
+    expect(child_tweet.parent).to eq(tweet)
+    expect(grandchild_tweet.root).to eq(tweet)
+  end
+
+  it 'has no parent and is its own root tweet if it is a root tweet itself' do
+    user = create_valid_user
+
+    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    expect(tweet.parent).to eq(nil)
+    expect(tweet.root).to eq(tweet)
+  end
+
   it 'has a content between 1 and 139 characters' do
     user = create_valid_user
 

@@ -4,5 +4,6 @@ class Retweet < ApplicationRecord
 
   # Validates that a user can only retweet one specific tweet ONCE. A user can’t
   # have two retweets for the same tweet.
-  validates :user_id, uniqueness: { scope: :tweet_id }
+  validates :user_id, presence: true, uniqueness: { scope: :tweet_id }
+  validates :tweet_id, presence: true
 end

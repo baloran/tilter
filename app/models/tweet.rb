@@ -18,4 +18,6 @@ class Tweet < ApplicationRecord
       "#{MAX_CONTENT_LENGTH} characters",
     allow_nil: false, allow_blank: false
   }
+
+  validates :user_id, presence: true
 end

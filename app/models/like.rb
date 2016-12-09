@@ -4,5 +4,6 @@ class Like < ApplicationRecord
 
   # Validates that a user can only like one specific tweet ONCE. A user can’t
   # have two likes for the same tweet.
-  validates :user_id, uniqueness: { scope: :tweet_id }
+  validates :user_id, presence: true, uniqueness: { scope: :tweet_id }
+  validates :tweet_id, presence: true
 end

@@ -5,7 +5,6 @@ RSpec.describe Like, type: :model do
   def create_valid_user(username: 'baloran', email: 'baloranandco@gmail.com')
     User.create(
       username: username,
-      display_name: 'bal0ran',
       password: 'password',
       email: email
     )
@@ -29,8 +28,10 @@ RSpec.describe Like, type: :model do
 
   it 'can only be created once by the same user on the same tweet' do
     tweet = create_valid_tweet
-    Like.create(user_id: tweet.user.id, tweet_id: tweet.id)
-    Like.create(user_id: tweet.user.id, tweet_id: tweet.id)
+
+    2.times do
+      Like.create(user_id: tweet.user.id, tweet_id: tweet.id)
+    end
 
     likes = Like.all
     expect(likes.count).to eq(1)

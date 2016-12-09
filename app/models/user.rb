@@ -7,6 +7,20 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :retweets, dependent: :destroy
   has_many :likes, dependent: :destroy
+
+  has_many(
+    :follows,
+    dependent: :destroy,
+    foreign_key: 'follower_id',
+    class_name: 'Relationship'
+  )
+  has_many(
+    :followers,
+    dependent: :destroy,
+    foreign_key: 'followed_id',
+    class_name: 'Relationship'
+  )
+
   before_validation :assign_display_name
 
   MIN_USERNAME_LENGTH = 2

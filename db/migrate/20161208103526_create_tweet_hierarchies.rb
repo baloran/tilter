@@ -1,4 +1,4 @@
-class CreateTweetHierarchies < ActiveRecord::Migration
+class CreateTweetHierarchies < ActiveRecord::Migration[5.0]
   def change
     create_table :tweet_hierarchies, id: false do |t|
       t.integer :ancestor_id, null: false

@@ -4,8 +4,8 @@ class Hashtag < ApplicationRecord
 
   before_validation :slugify
 
-  validates :slug, presence: true
-  validates :term, presence: true
+  validates :slug, presence: true, uniqueness: true
+  validates :term, presence: true, uniqueness: true
 
   protected
 

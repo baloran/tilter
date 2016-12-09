@@ -4,5 +4,4 @@ class TweetHashtag < ApplicationRecord
 
   validates :tweet_id, presence: true
   validates :hashtag_id, presence: true
-  validates :user_id, presence: true
 end

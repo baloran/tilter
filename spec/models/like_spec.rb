@@ -13,7 +13,7 @@ RSpec.describe Like, type: :model do
   # Returns a valid tweet to avoid repetitions in tests
   def create_valid_tweet(user: nil)
     user = create_valid_user if user.nil?
-    Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    user.tweets.create(content: 'I’m really tilting today!')
   end
 
   it 'can be created by an user, on a tweet' do
@@ -78,7 +78,7 @@ RSpec.describe Like, type: :model do
     user = create_valid_user
 
     10.times do |number|
-      tweet = Tweet.create(user_id: user.id, content: number)
+      tweet = user.tweets.create(content: number)
       Like.create(user_id: user.id, tweet_id: tweet.id)
     end
 

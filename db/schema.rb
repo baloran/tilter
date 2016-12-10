@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20161210160436) do
   create_table "hashtags", force: :cascade do |t|
     t.string   "term"

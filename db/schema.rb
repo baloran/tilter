@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20161210160436) do
-
   create_table "hashtags", force: :cascade do |t|
     t.string   "term"
     t.datetime "created_at", null: false
@@ -24,6 +23,13 @@ ActiveRecord::Schema.define(version: 20161210160436) do
     t.integer  "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "retweets", force: :cascade do |t|

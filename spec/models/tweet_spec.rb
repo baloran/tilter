@@ -5,7 +5,6 @@ RSpec.describe Tweet, type: :model do
   def create_valid_user
     User.create(
       username: 'baloran',
-      display_name: 'bal0ran',
       password: 'password',
       email: 'baloranandco@gmail.com'
     )

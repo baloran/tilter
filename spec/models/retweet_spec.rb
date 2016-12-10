@@ -5,7 +5,6 @@ RSpec.describe Retweet, type: :model do
   def create_valid_user(username: 'baloran', email: 'baloranandco@gmail.com')
     User.create(
       username: username,
-      display_name: 'bal0ran',
       password: 'password',
       email: email
     )
@@ -29,8 +28,10 @@ RSpec.describe Retweet, type: :model do
 
   it 'can only be created once by the same user on the same tweet' do
     tweet = create_valid_tweet
-    Retweet.create(user_id: tweet.user.id, tweet_id: tweet.id)
-    Retweet.create(user_id: tweet.user.id, tweet_id: tweet.id)
+
+    2.times do
+      Retweet.create(user_id: tweet.user.id, tweet_id: tweet.id)
+    end
 
     retweets = Retweet.all
     expect(retweets.count).to eq(1)

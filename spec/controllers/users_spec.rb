@@ -34,13 +34,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
     }
 
     expect(User.count).to eq(0)
-    # expect(response).to have_http_status(:success)
-  end
-
-  it 'can connect' do
-    post :sign_in, params: {
-      
-    }
+    expect(response).to have_http_status(:error)
   end
 end
 
@@ -55,8 +49,6 @@ RSpec.describe Users::ProfilesController, type: :controller do
     )
 
     get :profile, params: { username: 'baloran' }
-
-    print response.body.inspect
 
     expect(response.body).to include('baloran')
     expect(response).to have_http_status(:success)

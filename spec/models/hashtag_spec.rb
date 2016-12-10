@@ -24,7 +24,7 @@ RSpec.describe Hashtag, type: :model do
     tweet_content = "##{tweet_hashtags.join(' #')}"
 
     user = create_valid_user
-    tweet = Tweet.create(user_id: user.id, content: tweet_content)
+    tweet = user.tweets.create(content: tweet_content)
 
     tweet_hashtags.each do |hashtag|
       tweet.hashtags.create(term: hashtag)
@@ -44,7 +44,7 @@ RSpec.describe Hashtag, type: :model do
 
   it 'only has one record in the database for similar hashtags…' do
     user = create_valid_user
-    tweet = Tweet.create(user_id: user.id, content: '#first #second #first')
+    tweet = user.tweets.create(content: '#first #second #first')
 
     tweet.hashtags.create(term: 'first')
     tweet.hashtags.create(term: 'second')
@@ -57,8 +57,8 @@ RSpec.describe Hashtag, type: :model do
 
   it '…but does allow multiple records in the join table' do
     user = create_valid_user
-    tweet = Tweet.create(user_id: user.id, content: '#first #second #first')
-    tweet2 = Tweet.create(user_id: user.id, content: '#first')
+    tweet = user.tweets.create(content: '#first #second #first')
+    tweet2 = user.tweets.create(content: '#first')
 
     # This logic will be handled in the controller. We do it manually here for
     # testing purposes. See the Tweet controller tests.
@@ -73,7 +73,7 @@ RSpec.describe Hashtag, type: :model do
 
   it 'can be listed to get all the hashtags used in a specific tweet' do
     user = create_valid_user
-    tweet = Tweet.create(user_id: user.id, content: '#first #second #first')
+    tweet = user.tweets.create(content: '#first #second #first')
 
     tweet.hashtags.create(term: 'first')
     tweet.hashtags.create(term: 'second')

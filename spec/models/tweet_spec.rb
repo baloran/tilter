@@ -13,8 +13,7 @@ RSpec.describe Tweet, type: :model do
 
   it 'can be created by an user' do
     user = create_valid_user
-
-    Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    user.tweets.create(content: 'I’m really tilting today!')
 
     found = Tweet.joins(:user).last
     expect(found.content).to eq('I’m really tilting today!')
@@ -24,7 +23,7 @@ RSpec.describe Tweet, type: :model do
   it 'can be deleted, deleting all of its children with it' do
     user = create_valid_user
 
-    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    tweet = user.tweets.create(content: 'I’m really tilting today!')
     child_tweet = tweet.children.create(
       content: 'I’m the children of the first tweet!',
       user_id: user.id
@@ -48,8 +47,7 @@ RSpec.describe Tweet, type: :model do
 
   it 'can have children tweets' do
     user = create_valid_user
-
-    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    tweet = user.tweets.create(content: 'I’m really tilting today!')
     child_tweet1 = tweet.children.create(
       content: 'I’m the children of the first tweet!',
       user_id: user.id
@@ -72,8 +70,7 @@ RSpec.describe Tweet, type: :model do
 
   it 'can have grandchildren tweets' do
     user = create_valid_user
-
-    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    tweet = user.tweets.create(content: 'I’m really tilting today!')
     child_tweet = tweet.children.create(
       content: 'I’m the children of the first tweet!',
       user_id: user.id
@@ -90,8 +87,7 @@ RSpec.describe Tweet, type: :model do
 
   it 'has methods to retrieve its parent and root tweet' do
     user = create_valid_user
-
-    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    tweet = user.tweets.create(content: 'I’m really tilting today!')
     child_tweet = tweet.children.create(
       content: 'I’m the children of the first tweet!',
       user_id: user.id
@@ -108,15 +104,14 @@ RSpec.describe Tweet, type: :model do
   it 'has no parent and is its own root tweet if it is a root tweet itself' do
     user = create_valid_user
 
-    tweet = Tweet.create(content: 'I’m really tilting today!', user_id: user.id)
+    tweet = user.tweets.create(content: 'I’m really tilting today!')
     expect(tweet.parent).to eq(nil)
     expect(tweet.root).to eq(tweet)
   end
 
   it 'has a content between 1 and 139 characters' do
     user = create_valid_user
-
-    tweet = Tweet.create(user_id: user.id)
+    tweet = user.tweets.create
     expect(tweet.valid?).to eq(false)
 
     tweet.content = 'I'
@@ -132,7 +127,7 @@ RSpec.describe Tweet, type: :model do
   it 'has a proper error message for content being too short or too long' do
     user = create_valid_user
 
-    tweet = Tweet.create(user_id: user.id)
+    tweet = user.tweets.create
     expect(tweet.errors.messages[:content].first).not_to be_empty
   end
 end

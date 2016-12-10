@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209103619) do
+ActiveRecord::Schema.define(version: 20161210160436) do
+  create_table "hashtags", force: :cascade do |t|
+    t.string   "term"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,6 +35,13 @@ ActiveRecord::Schema.define(version: 20161209103619) do
   create_table "retweets", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tweet_hashtags", force: :cascade do |t|
+    t.integer  "tweet_id"
+    t.integer  "hashtag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161209103619) do
     t.string   "username",               default: "", null: false
     t.string   "display_name",           default: "", null: false
     t.string   "description",            default: ""
+    t.string   "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

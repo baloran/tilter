@@ -35,6 +35,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Adds hierarchy to models
 gem 'closure_tree'
 
+# Handles image uploads
+gem 'carrierwave'
+gem 'cloudinary'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

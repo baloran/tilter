@@ -1,0 +1,18 @@
+development:
+  cloud_name: tilter
+  api_key: '462467329175814'
+  api_secret: zkctosesimnTA_uTGWqDFBMtQI8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: tilter
+  api_key: '462467329175814'
+  api_secret: zkctosesimnTA_uTGWqDFBMtQI8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: tilter
+  api_key: '462467329175814'
+  api_secret: zkctosesimnTA_uTGWqDFBMtQI8
+  enhance_image_tag: true
+  static_image_support: false

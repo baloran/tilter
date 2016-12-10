@@ -195,4 +195,19 @@ RSpec.describe 'User', type: :model do
 
     expect(user.errors.messages[:description].first).not_to be_empty
   end
+
+  it 'has a default avatar if not set' do
+    user = User.new(
+      username: 'baloran',
+      display_name: 'bal0ran',
+      password: 'password',
+      email: 'baloranandco@gmail.com'
+    )
+
+    expect(user.valid?).to be(true)
+    user.save
+
+    found = User.last
+    expect(found.avatar.url).to_not be_empty
+  end
 end

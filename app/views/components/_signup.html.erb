@@ -26,10 +26,11 @@
       <%= f.email_field :email, class: 'form__input' %>
     </div>
 
-    <%= f.submit "Sign up", class: 'cta cta--fill cta--fixed' %>
+    <%= f.submit 'Sign up', class: 'cta cta--fill cta--fixed' %>
   <% end %>
 
   <div class="main-block__disclaimer text-center">
-    Already have an account? <%= link_to 'Sign in', new_user_session_path %>
+    Already have an account?
+    <%= link_to 'Sign in', new_user_session_path %>
   </div>
 </section>

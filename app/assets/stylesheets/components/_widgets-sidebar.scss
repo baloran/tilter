@@ -1,4 +1,4 @@
-.mutual-follow {
+.widgets-sidebar {
 
   padding: rem(16px);
 
@@ -17,21 +17,25 @@
     }
   }
 
-  &__users {
+  &__items {
     @include display(flex);
     @include flex-wrap(wrap);
     margin-top: rem(10px);
 
   }
 
-  &__user {
+  &__item {
 
-    &:not(:nth-child(5n)) {
-      margin-right: rem(5px);
-    }
+    &--isuser {
 
-    &:nth-child(-n+5) {
-      margin-bottom: rem(7px);
+      &:not(:nth-child(5n)) {
+        margin-right: rem(5px);
+      }
+
+      &:nth-child(-n+5) {
+        margin-bottom: rem(7px);
+      }
+
     }
 
   }
@@ -42,4 +46,5 @@
       height: 30px;
     }
   }
+
 }

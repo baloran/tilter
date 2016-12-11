@@ -1,11 +1,10 @@
 var Submenu = function() {
 
 	'use strict';
+	
 	var $submenuToggler = $('.tilt__action--more');
 
 	var init = function() {
-		
-		console.log($submenuToggler);
 
 		$submenuToggler.on('click', function(e) {_bindClick($(this));});
 

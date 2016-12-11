@@ -19,5 +19,6 @@
 $(document).on('turbolinks:load', function () {
 
   	var submenu = new Submenu();
+  	var add     = new Add();
 
 });

@@ -10,6 +10,7 @@
   <!-- Render this on profile page -->
   <% unless current_page?('/') || current_page?('/tilt/:id') %>
     <%= render "components/mutual-follow" %>
+    <%= render "components/profile-medias" %>
   <% end %>
   <!-- END -->
 

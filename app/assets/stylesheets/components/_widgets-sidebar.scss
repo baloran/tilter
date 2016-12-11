@@ -13,7 +13,12 @@
 
     svg {
       width: 11px;
+      fill: #D3D3D3;
       margin-right: rem(2px);
+
+      &.picture {
+        width: 15px;
+      }
     }
   }
 
@@ -38,12 +43,30 @@
 
     }
 
+    &--ispicture {
+      &:not(:nth-child(4n)) {
+        margin-right: rem(5px);
+      }
+
+      &:nth-child(-n+4) {
+        margin-bottom: rem(7px);
+      }
+    }
+
   }
 
   &__picture {
     img {
       width: 30px;
       height: 30px;
+    }
+
+    &.ispicture {
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 

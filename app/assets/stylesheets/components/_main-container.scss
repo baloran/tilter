@@ -1,3 +1,7 @@
 .main-container {
   width: 488px;
+
+  .block:not(:last-child) {
+    margin-bottom: rem(30px);
+  }
 }

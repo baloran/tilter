@@ -1,4 +1,7 @@
-<div class="profile-overview block">
+<% class_small = '' if local_assigns[:class_small].nil? %>
+<% button_visible = '' if local_assigns[:button_visible].nil? %>
+
+<div class="block profile-overview <%= class_small + button_visible %>">
 
   <div class="profile-overview--top">
 
@@ -8,7 +11,7 @@
       <p class="profile-overview__handle text-center">~Batoulele_95</p>
     </a>
 
-    <!-- Render this on profile page AND if it's not your profile-->
+    <!-- Render this on profile page AND if it's not your profile AND only on sidebar-left (remove it on main-component)-->
     <% unless current_page?('/') || current_page?('/tilt/:id') %>
       <div class="profile-overview__buttons">
 
@@ -36,7 +39,6 @@
     <div class="profile-overview__about">
       <p class="profile-overview__description">4th year student at <a href="#" class="tilt__mention">~Hetic</a> - Junior Web Designer.</p>
       <p class="profile-overview__localisation"><%= embedded_svg('icons/pin.svg') %><span>Paris, France</span></p>
-
     </div>
   <% end %>
 

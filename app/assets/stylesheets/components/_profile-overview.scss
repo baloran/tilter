@@ -1,11 +1,39 @@
+.profiles {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
 .profile-overview {
 
-  width: 100%;
+  width: 234px;
   padding-top: rem(25px);
+
+  &--small {
+    .profile-overview--top {
+      border:none;
+      padding-bottom: rem(10px);
+    }
+
+    .profile-overview__avatar {
+      width: 55px;
+      height: 55px;
+    }
+  }
 
   &--top {
     border-bottom: 1px solid $border-bottom-color;
     padding-bottom: rem(25px);
+  }
+
+  &.buttons--isvisible {
+    .profile-overview__buttons {
+      @include display(flex);
+    }
+
+    .profile-overview__localisation {
+      display: inline-block;
+    }
   }
 
   &__avatar {
@@ -27,7 +55,7 @@
 
   &__buttons {
 
-    @include display(flex);
+    display: none;
     @include justify-content(space-around);
     margin-top: rem(20px);
   }
@@ -75,6 +103,7 @@
   &__localisation {
 
     @include vertical-center-container();
+    display: none;
 
     svg, span {
       @include vertical-center-block();

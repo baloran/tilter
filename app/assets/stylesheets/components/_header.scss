@@ -16,7 +16,7 @@ $header-height: 70px;
 		color: transparentize($white, .3);
 		font-family: $opensans-semibold;
 		&:not(:last-child) {
-			margin-right: 40px;
+			margin-right: rem(40px);
 		}
 		&:hover, &--active {
 			color: $white;

@@ -5,11 +5,11 @@
 		font-size: rem(14px);
 		font-family: $opensans-reg;
 		color: $gray4;
-		padding-bottom: 10px;
+		padding-bottom: rem(10px);
 	}
 	&__item {
 		color: $gray4;
-		padding: 7.5px 0;
+		padding: rem(7.5px) 0;
 		@include vertical-center-container;
 		strong {
 			font-size: rem(12px);

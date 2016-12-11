@@ -1,8 +1,8 @@
 <section class="sidebar sidebar--left">
 
+  <%= render "components/profile-overview" %>
   <!-- Render this on homepage + single tilt page (not sure about the method, I just used it because it's convenient) -->
   <% if current_page?('/') || current_page?('/tilt/:id') %>
-    <%= render "components/profile-overview" %>
     <%= render "components/trends" %>
   <% end %>
   <!-- END -->

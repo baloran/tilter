@@ -58,7 +58,6 @@ RSpec.describe 'User', type: :model do
       password: 'password',
       email: 'baloranandco@gmail.com'
     )
-    # As uniqueness of email is handled by Devise, it won’t raise an exception.
     expect(other_user.valid?).to eq(false)
   end
 
@@ -72,13 +71,12 @@ RSpec.describe 'User', type: :model do
 
     # Here, the uniqueness is handled by ActiveRecord directly and will
     # raise an exception as expected.
-    expect do
-      User.create(
-        username: 'baloran',
-        password: 'password',
-        email: 'stammeister@gmail.com'
-      )
-    end.to raise_exception(ActiveRecord::RecordNotUnique)
+    other_user = User.create(
+      username: 'baloran',
+      password: 'password',
+      email: 'stammeister@gmail.com'
+    )
+    expect(other_user.valid?).to eq(false)
   end
 
   it 'can have a username between 2 and 40 characters' do

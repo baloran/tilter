@@ -1,0 +1,24 @@
+<section class="add block">
+	<form action="#">
+		<div class="add__bait">	
+			<p>What makes you tilt today ?</p>
+			<label class="add__file-upload">
+				<%= embedded_svg('icons/picture.svg') %>	
+				<input type="file">
+			</label>
+		</div>
+		<textarea class="add__text"></textarea>
+		<div class="add__bottom">
+			<label class="add__file-upload">
+				<%= embedded_svg('icons/picture.svg') %>	
+				<input type="file">
+			</label>
+			<div class="add__right">
+				<span class="add__character-count add__character-count--error">139</span>
+				<button type="submit" class="cta cta--fill">
+				<%= embedded_svg('icons/strike.svg', class: 'cta__icon') %> <span>Tilt</span>
+					</button>
+      		</div>
+		</div>
+	</form>
+</section>

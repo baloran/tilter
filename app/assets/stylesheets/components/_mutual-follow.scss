@@ -1,0 +1,45 @@
+.mutual-follow {
+
+  padding: rem(16px);
+
+  &__title {
+    font-size: rem(14px);
+    color: $pink;
+    @include vertical-center-container();
+
+    span, svg {
+      @include vertical-center-block();
+    }
+
+    svg {
+      width: 11px;
+      margin-right: rem(2px);
+    }
+  }
+
+  &__users {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    margin-top: rem(10px);
+
+  }
+
+  &__user {
+
+    &:not(:nth-child(5n)) {
+      margin-right: rem(5px);
+    }
+
+    &:nth-child(-n+5) {
+      margin-bottom: rem(7px);
+    }
+
+  }
+
+  &__picture {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

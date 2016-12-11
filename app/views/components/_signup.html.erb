@@ -1,36 +1,39 @@
 <section class="block main-block signup">
-
   <div class="main-block__title text-center">
-    Sign up <span class="main-block__catchline">Create a new account and tilt</span>
+    Sign up
+    <span class="main-block__catchline">Create a new account and tilt</span>
   </div>
 
-  <form action="#" class="form">
+  <%= form_for(
+    resource,
+    as: resource_name,
+    url: registration_path(resource_name),
+    html: { class: 'form' }
+  ) do |f| %>
+    <%# devise_error_messages! %>
 
     <div class="form__row">
-      <label for="username" class="form__label">Username</label>
-      <input type="text" id="username" class="form__input">
-      <p class="form__error">Username already exists</p>
+      <%= f.label :username, class: 'form__label' %>
+      <%= f.text_field :username, autofocus: true, class: 'form__input' %>
+      <!-- <p class="form__error">Username already exists</p> -->
     </div>
 
     <div class="form__row">
-      <label for="password" class="form__label">Password</label>
-      <input type="password" id="password" class="form__input">
-      <p class="form__error">Password needs to be at least 8 characters long</p>
+      <%= f.label :password, class: 'form__label' %>
+      <%= f.password_field :password, autocomplete: 'off', class: 'form__input' %>
+      <!-- <p class="form__error">Password needs to be at least 8 characters long</p> -->
     </div>
 
     <div class="form__row">
-      <label for="email" class="form__label">Email</label>
-      <input type="email" id="email" class="form__input">
-      <p class="form__error">Email is invalid</p>
+      <%= f.label :email, class: 'form__label' %>
+      <%= f.email_field :email, class: 'form__input' %>
+      <!-- <p class="form__error">Email is invalid</p> -->
     </div>
 
-
-    <input type="submit" value="Sign up" class="cta cta--fill cta--fixed">
-
-  </form>
+    <%= f.submit "Sign up", class: 'cta cta--fill cta--fixed' %>
+  <% end %>
 
   <div class="main-block__disclaimer text-center">
-    Already have an account? <a href="#">Sign in</a>
+    Already have an account? <%= link_to 'Sign in', new_user_session_path %>
   </div>
-
 </section>

@@ -37,6 +37,7 @@
 		font-family: $opensans-semibold;
 		font-size: rem(10px);
 		color: $gray3;
+		cursor: pointer;
 		&:not(:last-child) {
 			margin-right: 15px;
 		}
@@ -51,11 +52,12 @@
 		}
 		&--more {
 			position: relative;
+			cursor: pointer;
 			svg {
 				height: 3px;
 			}
 		}
-		&--active {
+		&:hover, &--active {
 			color: $pink;
 			svg {
 				fill: $pink;

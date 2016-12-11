@@ -3,7 +3,7 @@
   width: 100%;
   padding-top: rem(25px);
 
-  &__top {
+  &--top {
     border-bottom: 1px solid $border-bottom-color;
     padding-bottom: rem(25px);
   }
@@ -56,6 +56,34 @@
     &--tilt {
       width: 8px;
     }
+  }
+
+  &__about {
+    padding: rem(15px) rem(15px) rem(10px);
+  }
+
+  &__description, &__localisation {
+    font-size: rem(13px);
+    color: $gray5;
+  }
+
+  &__description {
+    line-height: rem(18px);
+    margin-bottom: rem(10px);
+  }
+
+  &__localisation {
+
+    @include vertical-center-container();
+
+    svg, span {
+      @include vertical-center-block();
+    }
+
+    svg {
+      width: 8px;
+    }
+
   }
 
 }

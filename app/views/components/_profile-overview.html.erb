@@ -1,58 +1,70 @@
 <div class="profile-overview block">
 
-  <a href="#">
-    <%= image_tag("default_avatar.png", class: "profile-overview__avatar") %>
-    <p class="profile-overview__name text-center">Batoulele</p>
-    <p class="profile-overview__handle text-center">~Batoulele_95</p>
-  </a>
+  <div class="profile-overview--top">
 
-  <!-- Render this on profile page AND if it's not your profile-->
+    <a href="#">
+      <%= image_tag("default_avatar.png", class: "profile-overview__avatar") %>
+      <p class="profile-overview__name text-center">Batoulele</p>
+      <p class="profile-overview__handle text-center">~Batoulele_95</p>
+    </a>
+
+    <!-- Render this on profile page AND if it's not your profile-->
+    <% unless current_page?('/') || current_page?('/tilt/:id') %>
+      <div class="profile-overview__buttons">
+
+        <!-- if you follow him : button following -->
+        <button class="cta cta--fill profile-overview__button">
+          <%= embedded_svg('icons/checkbox.svg', class: 'profile-overview__icon profile-overview__icon--following') %> <span>Following</span>
+        </button>
+
+        <!-- if you don't follow him : button follow -->
+        <button class="cta cta--stroke profile-overview__button">
+          <%= embedded_svg('icons/add.svg', class: 'profile-overview__icon profile-overview__icon--follow') %> <span>Follow</span>
+        </button>
+        <!-- END -->
+
+        <button class="cta cta--fill profile-overview__button">
+          <%= embedded_svg('icons/strike.svg', class: 'profile-overview__icon profile-overview__icon--tilt') %> <span>Tilt to</span>
+        </button>
+      </div>
+    <% end %>
+
+  </div>
+  <!-- END -->
+
   <% unless current_page?('/') || current_page?('/tilt/:id') %>
-    <div class="profile-overview__buttons">
+    <div class="profile-overview__about">
+      <p class="profile-overview__description">4th year student at <a href="#" class="tilt__mention">~Hetic</a> - Junior Web Designer.</p>
+      <p class="profile-overview__localisation"><%= embedded_svg('icons/pin.svg') %><span>Paris, France</span></p>
 
-      <!-- if you follow him : button following -->
-      <button class="cta cta--fill profile-overview__button">
-        <%= embedded_svg('icons/checkbox.svg', class: 'profile-overview__icon profile-overview__icon--following') %> <span>Following</span>
-      </button>
+    </div>
+  <% end %>
 
-      <!-- if you don't follow him : button follow -->
-      <button class="cta cta--stroke profile-overview__button">
-        <%= embedded_svg('icons/add.svg', class: 'profile-overview__icon profile-overview__icon--follow') %> <span>Follow</span>
-      </button>
-      <!-- END -->
+  <!-- Render this on homepage + single tilt page  -->
+  <% if current_page?('/') || current_page?('/tilt/:id') %>
+    <div class="figures">
 
-      <button class="cta cta--fill profile-overview__button">
-        <%= embedded_svg('icons/strike.svg', class: 'profile-overview__icon profile-overview__icon--tilt') %> <span>Tilt to</span>
-      </button>
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">1689</p>
+          <p class="figures__description">TILTS</p>
+        </a>
+      </div>
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">355</p>
+          <p class="figures__description">FOLLOWING</p>
+        </a>
+      </div>
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">1337</p>
+          <p class="figures__description">FOLLOWERS</p>
+        </a>
+      </div>
+
     </div>
   <% end %>
   <!-- END -->
-
-<!-- Render this on homepage + single tilt page  -->
-<% if current_page?('/') || current_page?('/tilt/:id') %>
-  <div class="figures">
-
-    <div class="figures__item">
-      <a href="#">
-        <p class="figures__numbers">1689</p>
-        <p class="figures__description">TILTS</p>
-      </a>
-    </div>
-    <div class="figures__item">
-      <a href="#">
-        <p class="figures__numbers">355</p>
-        <p class="figures__description">FOLLOWING</p>
-      </a>
-    </div>
-    <div class="figures__item">
-      <a href="#">
-        <p class="figures__numbers">1337</p>
-        <p class="figures__description">FOLLOWERS</p>
-      </a>
-    </div>
-
-  </div>
-<% end %>
-<!-- END -->
 
 </div>

@@ -1,34 +1,41 @@
 <section class="block main-block signin">
-
   <div class="main-block__title text-center">
-    Sign in <span class="main-block__catchline">Login to start the tilting</span>
+    Sign in
+    <span class="main-block__catchline">Login to start tilting</span>
   </div>
 
-  <form action="#" class="form">
-
+  <%= form_for(
+    resource,
+    as: resource_name,
+    url: session_path(resource_name),
+    html: { class: 'form' }
+  ) do |f| %>
     <div class="form__row">
-      <label for="username" class="form__label">Username</label>
-      <input type="text" id="username" class="form__input">
+      <%= f.label :email, class: 'form__label' %>
+      <%= f.email_field :email, autofocus: true, class: 'form__input' %>
     </div>
 
     <div class="form__row">
-      <label for="password" class="form__label">Password</label>
-      <input type="password" id="password" class="form__input">
+      <%= f.label :password, class: 'form__label' %>
+      <%= f.password_field :password, autocomplete: 'off', class: 'form__input' %>
     </div>
 
-    <div class="form__row">
-      <input type="checkbox" id="remember">
-      <label for="remember" class="form__label form__label--grey">Remember ?</label>
-    </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="form__row">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, class: 'form__label form__label--grey' %>
+      </div>
+    <% end %>
 
-    <p class="form__error">Wrong username and/or password!</p>
+    <% flash.each do |name, message| %>
+      <p class="form__error"><%= message %></p>
+    <% end %>
 
-    <input type="submit" value="Login" class="cta cta--fill cta--fixed">
-
-  </form>
+    <%= f.submit 'Sign in', class: 'cta cta--fill cta--fixed' %>
+  <% end %>
 
   <div class="main-block__disclaimer text-center">
-    Don't have an account? <%= link_to 'Sign up', new_user_registration_path %>
+    Don't have an account?
+    <%= link_to 'Sign up', new_user_registration_path %>
   </div>
-
 </section>

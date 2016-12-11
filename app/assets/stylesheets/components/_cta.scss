@@ -1,0 +1,30 @@
+.cta {
+  height: 30px;
+  border: 1px solid $pink;
+  font-family: $opensans-reg;
+  font-size: rem(12px);
+  padding: 0 rem(14px);
+  cursor: pointer;
+
+  @include border-box;
+
+  &--fill {
+    background: $pink;
+    color: $white;
+  }
+
+  &--stroke {
+    background: transparent;
+    color: $pink;
+    @include transition(all 0.2s);
+
+    &:hover {
+      background: $pink;
+      color: $white;
+    }
+  }
+
+  &--fixed {
+    width: 100px;
+  }
+}

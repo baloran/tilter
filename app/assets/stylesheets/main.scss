@@ -11,10 +11,16 @@
 @import 'base/typography';
 @import 'base/base';
 
+
+// COMPONENTS-UI
+
+@import 'components/follow-circle';
+
 // COMPONENTS
 
 @import 'components/header';
 @import 'components/searchbox';
 @import 'components/trends';
+@import 'components/suggestions';
 
 // VIEWS

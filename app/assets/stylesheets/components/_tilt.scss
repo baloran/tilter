@@ -50,6 +50,7 @@
 			@include vertical-center-block;
 		}
 		&--more {
+			position: relative;
 			svg {
 				height: 3px;
 			}

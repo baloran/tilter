@@ -11,6 +11,11 @@
 @import 'base/typography';
 @import 'base/base';
 
+
+// COMPONENTS-UI
+
+@import 'components/follow-circle';
+
 // COMPONENTS
 @import 'components/header';
 @import 'components/searchbox';
@@ -18,5 +23,7 @@
 @import 'components/profile-overview';
 @import 'components/figures';
 @import 'components/main-container';
+@import 'components/trends';
+@import 'components/suggestions';
 
 // VIEWS

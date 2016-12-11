@@ -13,18 +13,23 @@
 		@include vertical-center-container;
 		strong {
 			font-size: rem(12px);
+			letter-spacing: rem(-0.17px);
+			color: $gray4;
 		}
 		p {
 			@include vertical-center-block;
 			font-size: rem(10px);
 			margin-right: 7px;
+			width: calc(100% - 85px);
+			letter-spacing: rem(-0.14px);
+			color: $gray2;
 		}
 	}
 	&__profile-picture {
 		width: 30px;
 		height: 30px;
 		@include vertical-center-block;
-		margin-right: 8px;
+		margin-right: 5px;
 	}
 	&__remove {
 		@include vertical-center-block;
@@ -37,6 +42,5 @@
 	}
 	.follow-circle {
 		@include vertical-center-block;
-		margin-right: 7px;
 	}
 }

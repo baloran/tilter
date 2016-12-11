@@ -1,17 +1,3 @@
 <section class="main-container">
-
-
-  <!-- Render this on homepage + single tilt page (not sure about the method, I just used it because it's convenient) -->
-  <% if current_page?('/users/sign_in') %>
-    <%= render "components/signin" %>
-  <% end %>  
-
-  <% if current_page?('/users/sign_up') %>
-    <%= render "components/signup" %>
-  <% end %>
-
-  <% if current_page?('/') %>
-    <%= render "components/feed" %>
-  <% end %>
-
+  <%= yield %>
 </section>

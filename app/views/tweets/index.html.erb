@@ -1,7 +1,14 @@
 <div class="container layout">
+  <%= render "components/sidebar-left" do %>
+    <%= render "components/profile-overview" %>
+    <%= render "components/trends" %>
+  <% end %>
 
-  <%= render "components/sidebar-left" %>
-  <%= render "components/main-container" %>
-  <%= render "components/sidebar-right" %>
+  <%= render "components/main-container" do %>
+    <%= render "components/feed" %>
+  <% end %>
 
+  <%= render "components/sidebar-right" do %>
+    <%= render "components/suggestions" %>
+  <% end %>
 </div>

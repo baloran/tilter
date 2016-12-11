@@ -1,12 +1,24 @@
 .cta {
   height: 30px;
   border: 1px solid $pink;
-  font-family: $opensans-reg;
+  font-family: $opensans-semibold;
   font-size: rem(12px);
   padding: 0 rem(14px);
   cursor: pointer;
+  @include vertical-center-container();
 
   @include border-box;
+
+  &__icon {
+    width: 9px;
+    height: auto;
+    margin-right: 2px;
+    @include vertical-center-block();
+  }
+
+  span {
+    @include vertical-center-block();
+  }
 
   &--fill {
     background: $pink;

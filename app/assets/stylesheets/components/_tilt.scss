@@ -1,0 +1,64 @@
+.tilt {
+	padding: 10px 0;
+	&__account {
+		padding-bottom: 5px;
+		strong {
+			font-size: rem(12px);
+			color: $gray4;
+			letter-spacing: rem(-0.18px);
+		}
+		span {
+			font-size: rem(10px);
+			color: $gray2;
+			letter-spacing: rem(-0.14px);
+		}
+	}
+	&__content {
+		padding-bottom: 5px;
+		font-size: rem(12px);
+		line-height: rem(16px);
+		font-family: $opensans-reg;
+		color: $gray6;
+		span, a {
+			color: $pink;
+		}
+	}
+	&__picture {
+		padding: 10px 0;
+		img {
+			width: 100%;
+		}
+	}
+	&__actions {
+		@include vertical-center-container;
+	}
+	&__action {
+		@include vertical-center-block;
+		font-family: $opensans-semibold;
+		font-size: rem(10px);
+		color: $gray3;
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+		svg {
+			@include vertical-center-block;
+			height: 12px;
+			width: auto;
+			fill: $gray3;
+		}
+		span {
+			@include vertical-center-block;
+		}
+		&--more {
+			svg {
+				height: 3px;
+			}
+		}
+		&--active {
+			color: $pink;
+			svg {
+				fill: $pink;
+			}
+		}
+	}
+}

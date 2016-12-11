@@ -3,7 +3,7 @@ Tilter is a twitter-like webapp where you can post what made you tilt instead of
 useful informations.
 It was created to learn Rails and isn’t intended to be taken as a serious project.
 
-![build](https://travis-ci.com/baloran/tilter.svg?branch=master)
+![build](https://travis-ci.org/baloran/tilter.svg?branch=master)
 
 ## Install
 

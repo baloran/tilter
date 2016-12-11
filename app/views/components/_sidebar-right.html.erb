@@ -1,9 +1,8 @@
 <section class="sidebar sidebar--right">
 
-  <%= render "components/suggestions" %>
-
   <!-- Render unless user is on homepage or single tilt page -->
-  <% unless current_page?('/') || current_page?('/tilt/:id') %>
+  <% unless current_page?('/') || current_page?('/tilt/:id') || current_page?('/users/sign_in') %>
+    <%= render "components/suggestions" %>
     <%= render "components/trends" %>
   <% end %>
   <!-- END -->

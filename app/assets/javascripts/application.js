@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_directory ./vendors
 //= require_directory ./app
 //= require turbolinks
 

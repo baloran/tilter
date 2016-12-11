@@ -2,6 +2,7 @@
 	&__row {
 		padding: 0 40px;
 		@include vertical-center-container;
+		position: relative;
 		&:not(:last-child) {
 			border-bottom: 1px solid $gray1;
 		}
@@ -14,6 +15,21 @@
 			width: calc(100% - 42px);
 			@include vertical-center-block;
 			vertical-align: top;
+		}
+		&--with-reply {
+			&:not(:last-child) {
+				border-bottom: none;
+			}
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 1px;
+				top: 50px;
+				left: 54px;
+				height: calc(100% - 50px);
+				background-color: $gray2;
+			}
 		}
 	}
 }

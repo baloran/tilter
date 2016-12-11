@@ -6,6 +6,8 @@
     <p class="profile-overview__handle text-center">~Batoulele_95</p>
   </a>
 
+<!-- Render this on homepage + single tilt page  -->
+<% if current_page?('/') || current_page?('/tilt/:id') %>
   <div class="figures">
 
     <div class="figures__item">
@@ -28,5 +30,7 @@
     </div>
 
   </div>
+<% end %>
+<!-- END -->
 
 </div>

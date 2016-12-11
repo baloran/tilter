@@ -1,0 +1,19 @@
+.feed {
+	&__row {
+		padding: 0 40px;
+		@include vertical-center-container;
+		&:not(:last-child) {
+			border-bottom: 1px solid $gray1;
+		}
+		section:first-child {
+			width: 42px;
+			@include vertical-center-block;
+			vertical-align: top;
+		}
+		section:last-child {
+			width: calc(100% - 42px);
+			@include vertical-center-block;
+			vertical-align: top;
+		}
+	}
+}

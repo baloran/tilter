@@ -10,4 +10,8 @@
     <%= render "components/signup" %>
   <% end %>
 
+  <% if current_page?('/') %>
+    <%= render "components/feed" %>
+  <% end %>
+
 </section>

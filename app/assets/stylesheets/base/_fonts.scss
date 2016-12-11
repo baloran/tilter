@@ -1,0 +1,5 @@
+// install fonts
+
+@include font-face($opensans-reg, "../fonts/opensans-regular-webfont", $file-formats: ttf svg eot woff);
+@include font-face($opensans-semibold, "../fonts/opensans-semibold-webfont", $file-formats: ttf svg eot woff);
+@include font-face($din, "../fonts/din-condensed-bold-webfont", $file-formats: ttf svg eot woff);

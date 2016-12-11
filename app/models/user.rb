@@ -30,13 +30,21 @@ class User < ApplicationRecord
 
   MIN_USERNAME_LENGTH = 2
   MAX_USERNAME_LENGTH = 40
-  validates :username, length: {
-    minimum: MIN_USERNAME_LENGTH,
-    maximum: MAX_USERNAME_LENGTH,
-    message: "Your username must be between #{MIN_USERNAME_LENGTH} and "\
-      "#{MAX_USERNAME_LENGTH} characters",
-    allow_nil: false, allow_blank: false
-  }
+  validates :username,
+    length: {
+      minimum: MIN_USERNAME_LENGTH,
+      maximum: MAX_USERNAME_LENGTH,
+      message: "Your username must be between #{MIN_USERNAME_LENGTH} and "\
+        "#{MAX_USERNAME_LENGTH} characters",
+      allow_nil: false, allow_blank: false
+    },
+    format: {
+      with: /\A[a-z0-9\-_]+\z/i,
+      message: 'Your username must only contain alphanumeric characters, '\
+        'dashes and underscores'
+    },
+    presence: true,
+    uniqueness: { case_sensitive: false }
 
   MIN_DISPLAY_NAME_LENGTH = 2
   MAX_DISPLAY_NAME_LENGTH = 40

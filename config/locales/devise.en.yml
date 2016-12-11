@@ -65,6 +65,9 @@ en:
       models:
         user:
           attributes:
+            username:
+              blank: "Your username can’t be blank"
+              taken: "This username is already being used by another user"
             password:
               blank: "Your password can’t be blank"
               too_short: "Your password must be at least 6 characters long"
@@ -73,4 +76,5 @@ en:
             email:
               blank: "Your e-mail can’t be blank"
               invalid: "Your e-mail is not in a valid format"
+              taken: "This e-mail is already being used by another user"
 

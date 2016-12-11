@@ -41,6 +41,9 @@ $header-height: 70px;
 		width: 20px;
 		height: 26px;
 		top: ($header-height - 26px)/2;
+		svg {
+			fill: $white;
+		}
 	}
 	&__right {
 		float: right;

@@ -1,5 +1,6 @@
 // COLOR
-$error-color : #FF5151;
+$error-color: #FF5151;
+$border-bottom-color: transparentize(#979797, 0.9);
 $pink: #A01E72;
 $white: #FFF;
 $gray1: #EFEFEF;
@@ -10,9 +11,9 @@ $gray5: #6A6A6A;
 $gray6: #545454;
 
 // FONTS
-$opensans-reg : 'OpenSans Regular';
-$opensans-semibold : 'OpenSans SemiBold';
-$din : 'DINCondensed Bold';
+$opensans-reg: 'OpenSans Regular';
+$opensans-semibold: 'OpenSans SemiBold';
+$din: 'DINCondensed Bold';
 
 
 $base-font-size: 16px;

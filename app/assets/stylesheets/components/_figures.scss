@@ -1,0 +1,23 @@
+.figures {
+
+  font-family: $opensans-semibold;
+  padding: rem(20px) 0;
+  @include display(flex);
+  @include justify-content(space-around);
+
+  &__item {
+    text-align: center;
+  }
+
+  &__numbers {
+    color: $gray3;
+    margin-bottom: rem(6px);
+  }
+
+  &__description {
+    color: $gray2;
+    font-size: rem(10px);
+    text-transform: uppercase;
+  }
+
+}

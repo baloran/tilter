@@ -1,0 +1,31 @@
+// Fonts
+
+@font-face {
+    font-family: 'OpenSans Regular';
+    src: font-url('opensans-regular-webfont.ttf') format('ttf'),
+    font-url('opensans-regular-webfont.eot') format('embedded-opentype'),
+    font-url('opensans-regular-webfont.woff') format('woff'),
+    font-url('opensans-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans SemiBold';
+    src: font-url('opensans-semibold-webfont.ttf') format('ttf'),
+    font-url('opensans-semibold-webfont.eot') format('embedded-opentype'),
+    font-url('opensans-semibold-webfont.woff') format('woff'),
+    font-url('opensans-semibold-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINCondensed Bold';
+    src: font-url('din_condensed_bold-webfont.ttf') format('ttf'),
+    font-url('din_condensed_bold-webfont.eot') format('embedded-opentype'),
+    font-url('din_condensed_bold-webfont.woff') format('woff'),
+    font-url('din_condensed_bold-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

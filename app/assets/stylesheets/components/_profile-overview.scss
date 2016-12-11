@@ -1,0 +1,61 @@
+.profile-overview {
+
+  width: 100%;
+  padding-top: rem(25px);
+
+  &__top {
+    border-bottom: 1px solid $border-bottom-color;
+    padding-bottom: rem(25px);
+  }
+
+  &__avatar {
+    display: block;
+    margin: auto;
+  }
+
+  &__name {
+    font-family: $din;
+    font-size: rem(22px);
+    color: $gray5;
+    margin: rem(8px) rem(0px);
+  }
+
+  &__handle {
+    font-size: rem(10px);
+    color: $gray2;
+  }
+
+  &__buttons {
+
+    @include display(flex);
+    @include justify-content(space-around);
+    margin-top: rem(20px);
+  }
+
+  &__button {
+    > span {
+      @include vertical-center-block();
+      font-family: $opensans-semibold;
+    }
+  }
+
+  &__icon {
+    fill: $white;
+    @include vertical-center-block();
+
+    &--following {
+      width: 12px;
+    }
+
+    &--follow {
+      width: 12px;
+      fill: $pink;
+      @include transition(all 0.2s);
+    }
+
+    &--tilt {
+      width: 8px;
+    }
+  }
+
+}

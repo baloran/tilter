@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_directory ./app
 //= require turbolinks
-//= require_tree .
+
+
+$(document).on('turbolinks:load', function () {
+
+  	var submenu = new Submenu();
+
+});

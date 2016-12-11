@@ -1,0 +1,62 @@
+.form {
+  padding: rem(36px) 0 rem(20px) 0;
+  @include display(flex);
+  @include align-items(flex-start);
+  @include flex-direction(column);
+
+  &__row {
+    @include border-box;
+    width:100%;
+    margin-bottom: rem(14px);
+    padding-left: rem(60px);
+  }
+
+  &__label {
+    display: inline-block;
+    width: 24%;
+    font-family: $opensans-semibold;
+    font-size: rem(14px);
+    color: $gray4;
+    margin-right: rem(15px);
+
+    &--grey {
+      font-family: $opensans-reg;
+      font-size: rem(12px);
+    }
+  }
+
+  &__input {
+    width: 50%;
+    height: 30px;
+    font-family: $opensans-reg;
+    font-size: rem(14px);
+    color: #868686;
+    border: none;
+    outline: none;
+  }
+
+  &__error {
+    @include align-self(center);
+    color: $error-color;
+    font-size: rem(12px);
+    margin-top: rem(10px);
+  }
+
+  &__delete {
+    font-family: $opensans-reg;
+    font-size: rem(13px);
+    color: $gray2;
+    padding-left: rem(60px);
+    margin: rem(10px) 0;
+    @include transition(all 0.2s);
+
+    &:hover {
+      color: $error-color;
+    }
+  }
+
+  .cta {
+    @include align-self(center);
+    margin-top: rem(20px);
+  }
+}

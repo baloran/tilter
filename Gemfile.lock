@@ -42,6 +42,10 @@ GEM
     ast (2.3.0)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     byebug (9.0.6)
     carrierwave (0.11.2)
@@ -78,6 +82,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    ffi (1.9.14-x64-mingw32)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     http-cookie (1.0.3)
@@ -110,10 +115,13 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    nokogiri (1.6.8.1-x64-mingw32)
+      mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     parser (2.3.3.1)
       ast (~> 2.2)
     pg (0.19.0)
+    pg (0.19.0-x64-mingw32)
     powerpack (0.1.1)
     puma (3.6.2)
     rack (2.0.1)
@@ -150,6 +158,11 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rest-client (2.0.0-x64-mingw32)
+      ffi (~> 1.9)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
@@ -203,6 +216,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.12)
+    sqlite3 (1.3.12-x64-mingw32)
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -211,11 +225,14 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.10)
+      tzinfo (>= 1.0.0)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    unf_ext (0.0.7.2-x64-mingw32)
     unicode-display_width (1.1.1)
     warden (1.2.6)
       rack (>= 1.0)
@@ -233,9 +250,11 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bourbon
   byebug
   carrierwave
   closure_tree

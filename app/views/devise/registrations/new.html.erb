@@ -1,4 +1,10 @@
-<h2>Sign up</h2>
+<div class="container layout">
+
+  <%= render "components/sidebar-left" %>
+  <%= render "components/main-container" %>
+  <%= render "components/sidebar-right" %>
+
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>

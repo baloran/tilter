@@ -1,0 +1,80 @@
+.add {
+	padding: 10px 0;
+	&__bait {
+		@include clearfix;
+		p {
+			@include vertical-center-block;
+			color: $gray2;
+			font-size: rem(12px);
+			line-height: rem(30px);
+			font-family: $opensans-reg;
+			letter-spacing: rem(-0.18px);
+		}
+		.add__file-upload {
+			float: right;
+			@include vertical-center-block;	
+		}
+	}
+	&__text {
+		width: 100%;
+		height: 70px;
+		border: 1px solid $gray1;
+		padding: 8px 9px;
+		@include border-box;
+		outline: none;
+		font-family: $opensans-reg;
+		color: $gray4;
+		font-size: rem(12px);
+		letter-spacing: rem(-0.18px);
+		line-height: rem(16px);
+		resize: none;
+		display: none;
+	}
+	&__file-upload {
+		cursor: pointer;
+		line-height: 30px;
+		input {
+			display: none;
+		}
+		svg {
+			width: 16px;
+			height: auto;
+			fill: $gray2;
+		}
+		&:hover {
+			svg {
+				fill: $pink;
+			}
+		}
+	}
+	&__character-count {
+		font-size: rem(10px);
+		margin-right: 10px;
+		color: $gray3;
+		@include vertical-center-block;
+		&--error {
+			color: $error-color;
+		}
+	}
+	.cta {
+		@include vertical-center-block;
+	}
+	&__bottom {
+		@include clearfix;
+		margin-top: 10px;
+		display: none;
+	}
+	&__right {
+		float: right;
+		@include vertical-center-container;
+	}
+	&--active {
+		padding: 10px 0;
+		.add__bait {
+			display: none;
+		}
+		.add__text, .add__bottom {
+			display: block;
+		}
+	}
+}

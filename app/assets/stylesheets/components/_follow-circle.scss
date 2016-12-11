@@ -1,0 +1,25 @@
+.follow-circle {
+	width: 20px;
+	height: 20px;
+	background-color: $pink;
+	border: none;
+	color: $white;
+	border-radius: 50%;
+	&__icon {
+		width: 12px;
+		fill: $white;
+		position: relative;
+		top: calc(50% - 6px);
+		left: calc(50% - 6px);
+	}
+	&--add {
+		.follow-circle__icon:last-child {
+			display: none;
+		}
+	}
+	&--added {
+		.follow-circle__icon:first-child {
+			display: none;
+		}
+	}
+}

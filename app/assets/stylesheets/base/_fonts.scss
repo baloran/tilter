@@ -1,5 +1,31 @@
-// install fonts
+// Fonts
 
-@include font-face($opensans-reg, "../fonts/opensans-regular-webfont", $file-formats: ttf svg eot woff);
-@include font-face($opensans-semibold, "../fonts/opensans-semibold-webfont", $file-formats: ttf svg eot woff);
-@include font-face($din, "../fonts/din-condensed-bold-webfont", $file-formats: ttf svg eot woff);
+@font-face {
+    font-family: 'OpenSans Regular';
+    src: font-url('opensans-regular-webfont.ttf') format('ttf'), 
+    font-url('opensans-regular-webfont.eot') format('embedded-opentype'), 
+    font-url('opensans-regular-webfont.woff') format('woff'), 
+    font-url('opensans-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans SemiBold';
+    src: font-url('opensans-semibold-webfont.ttf') format('ttf'), 
+    font-url('opensans-semibold-webfont.eot') format('embedded-opentype'), 
+    font-url('opensans-semibold-webfont.woff') format('woff'), 
+    font-url('opensans-semibold-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINCondensed Bold';
+    src: font-url('din-condensed-bold-webfont.ttf') format('ttf'), 
+    font-url('din-condensed-bold-webfont.eot') format('embedded-opentype'), 
+    font-url('din-condensed-bold-webfont.woff') format('woff'), 
+    font-url('din-condensed-bold-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

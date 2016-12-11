@@ -4,7 +4,7 @@
   <!-- Render this on homepage + single tilt page (not sure about the method, I just used it because it's convenient) -->
   <% if current_page?('/users/sign_in') %>
     <%= render "components/signin" %>
-  <% end %>  
+  <% end %>
 
   <% if current_page?('/users/sign_up') %>
     <%= render "components/signup" %>
@@ -13,5 +13,43 @@
   <% if current_page?('/') %>
     <%= render "components/feed" %>
   <% end %>
+
+  <!-- Render this on all /users path -->
+  <% if current_page?('/users/:id') %>
+
+    <div class="block figures">
+
+      <div class="figures__item figures__item--isactive">
+        <a href="#">
+          <p class="figures__numbers">1689</p>
+          <p class="figures__description">TILTS</p>
+        </a>
+      </div>
+
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">355</p>
+          <p class="figures__description">FOLLOWING</p>
+        </a>
+      </div>
+
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">1337</p>
+          <p class="figures__description">FOLLOWERS</p>
+        </a>
+      </div>
+
+      <div class="figures__item">
+        <a href="#">
+          <p class="figures__numbers">1800</p>
+          <p class="figures__description">LIKES</p>
+        </a>
+      </div>
+
+    </div>
+
+  <% end %>
+  <!-- end -->
 
 </section>

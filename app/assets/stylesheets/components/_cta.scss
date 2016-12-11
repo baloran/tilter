@@ -21,6 +21,10 @@
     &:hover {
       background: $pink;
       color: $white;
+
+      svg {
+        fill: $white;
+      }
     }
   }
 

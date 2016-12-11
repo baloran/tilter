@@ -65,6 +65,12 @@ en:
       models:
         user:
           attributes:
+            password:
+              blank: "Your password can’t be blank"
+              too_short: "Your password must be at least 6 characters long"
+              too_long: "Your password must be less than 128 characters long"
+              invalid: "Your password is not in a valid format"
             email:
-              invalid: "Your e-mail doesn’t seem to be in a valid format"
+              blank: "Your e-mail can’t be blank"
+              invalid: "Your e-mail is not in a valid format"
 

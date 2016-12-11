@@ -8,26 +8,22 @@
     resource,
     as: resource_name,
     url: registration_path(resource_name),
+    validate: true,
     html: { class: 'form' }
   ) do |f| %>
-    <%# devise_error_messages! %>
-
     <div class="form__row">
       <%= f.label :username, class: 'form__label' %>
       <%= f.text_field :username, autofocus: true, class: 'form__input' %>
-      <!-- <p class="form__error">Username already exists</p> -->
     </div>
 
     <div class="form__row">
       <%= f.label :password, class: 'form__label' %>
       <%= f.password_field :password, autocomplete: 'off', class: 'form__input' %>
-      <!-- <p class="form__error">Password needs to be at least 8 characters long</p> -->
     </div>
 
     <div class="form__row">
       <%= f.label :email, class: 'form__label' %>
       <%= f.email_field :email, class: 'form__input' %>
-      <!-- <p class="form__error">Email is invalid</p> -->
     </div>
 
     <%= f.submit "Sign up", class: 'cta cta--fill cta--fixed' %>

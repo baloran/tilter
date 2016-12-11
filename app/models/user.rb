@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   before_validation :assign_display_name
 
+  # Format validation is handled by Devise for email & password
+  validates :email, presence: true
+  validates :password, presence: true
+
   MIN_USERNAME_LENGTH = 2
   MAX_USERNAME_LENGTH = 40
   validates :username, length: {

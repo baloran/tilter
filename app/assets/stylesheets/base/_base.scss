@@ -31,3 +31,7 @@ a {
 
 	@include border-box;
 }
+
+.field_with_errors {
+  display: inline
+}

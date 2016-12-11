@@ -36,6 +36,7 @@
   }
 
   &__error {
+    display: block;
     @include align-self(center);
     color: $error-color;
     font-size: rem(12px);

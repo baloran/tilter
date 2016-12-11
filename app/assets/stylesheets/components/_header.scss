@@ -1,0 +1,61 @@
+$header-height: 70px;
+
+.header {
+	background-color: $pink;
+	height: 70px;
+	@include clearfix;
+	&__menu {
+		float: left;
+		@include vertical-center-container;
+	}
+	&__menu-item {
+		position: relative;
+		@include vertical-center-block;
+		font-size: rem(12px);
+		line-height: $header-height;
+		color: transparentize($white, .3);
+		font-family: $opensans-semibold;
+		&:not(:last-child) {
+			margin-right: 40px;
+		}
+		&:hover, &--active {
+			color: $white;
+		}
+		&--active {
+			&:after {
+				content: '';
+				display: block;
+				width: 4px;
+				height: 4px;
+				position: absolute;
+				top: calc(50% + 12px);
+				left: calc(50% - 2px);
+				background-color: $white;
+				border-radius: 50%;
+			}
+		}
+	}
+	&__logo {
+		position: absolute;
+		left: 50%;
+		width: 20px;
+		height: 26px;
+		top: ($header-height - 26px)/2;
+	}
+	&__right {
+		float: right;
+		@include vertical-center-container;
+		height: $header-height;
+	}
+	&__profile-picture {
+		@include vertical-center-block;
+		img {
+			width: 42px;
+			height: 42px;
+		}
+	}
+	.searchbox {
+		@include vertical-center-block;
+		margin-right: 15px;
+	}
+}

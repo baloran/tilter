@@ -1,0 +1,21 @@
+<header class="header">
+	<div class="container">
+		<ul class="header__menu">
+			<li class="header__menu-item header__menu-item--active"><a href="#">Home</a></li>
+			<li class="header__menu-item"><a href="#">Notifications</a></li>
+			<li class="header__menu-item"><a href="#">Messages</a></li>
+		</ul>
+		<a href="#" class="header__logo">
+			<%= embedded_svg('icons/strike.svg') %>
+		</a>
+		<div class="header__right">
+			<form action="#" class="searchbox">
+				<input type="text" class="searchbox__text">
+				<input type="submit" class="searchbox__submit" value="">
+			</form>
+			<a href="#" class="header__profile-picture">
+				<%= image_tag("default_avatar.png") %>
+			</a>	
+		</div>
+	</div>
+</header>

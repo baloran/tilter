@@ -1,6 +1,12 @@
-<section class="add">
+<% class_active = '' if local_assigns[:class_active].nil? %>
+<% class_reply = '' if local_assigns[:class_reply].nil? %>
+
+<section class="add <%= class_active %>  <%= class_reply %>">
+	<button class="add__remove">
+		<%= embedded_svg('icons/close.svg') %>
+	</button>
 	<form action="#">
-		<div class="add__bait">	
+		<div class="add__bait">
 			<p>What makes you tilt today ?</p>
 			<label class="add__file-upload">
 				<%= embedded_svg('icons/picture.svg') %>	

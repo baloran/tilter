@@ -19,8 +19,12 @@
 		<%= render "components/profile-picture" %>	
 		<%= render "components/tilt" %>
 	</div>
-	<div class="feed__row">	
+	<div class="feed__row feed__row--with-add">	
 		<%= render "components/profile-picture" %>	
 		<%= render "components/tilt" %>
+	</div>
+	<div class="feed__row">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
 	</div>
 </section>

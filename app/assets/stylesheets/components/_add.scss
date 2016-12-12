@@ -1,5 +1,6 @@
 .add {
 	padding: 10px 0;
+	position: relative;
 	&__bait {
 		@include clearfix;
 		p {
@@ -13,6 +14,19 @@
 		.add__file-upload {
 			float: right;
 			@include vertical-center-block;	
+		}
+	}
+	&__remove {
+		position: absolute;
+		right: 0;
+		top: -10px;
+		background: transparent;
+		border: none;
+		padding: 0;
+		display: none;
+		svg {
+			width: 10px;
+			height: 10px;
 		}
 	}
 	&__text {
@@ -74,6 +88,11 @@
 			display: none;
 		}
 		.add__text, .add__bottom {
+			display: block;
+		}
+	}
+	&--reply {
+		.add__remove {
 			display: block;
 		}
 	}

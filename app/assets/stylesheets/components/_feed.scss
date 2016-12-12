@@ -31,5 +31,23 @@
 				background-color: $gray2;
 			}
 		}
+		&--with-add {
+			&:not(:last-child) {
+				border-bottom: none;
+			}
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 1px;
+				top: 50px;
+				left: 54px;
+				height: calc(100% - 50px);
+				background-color: $gray2;
+			}
+			.tilt__actions {
+				display: none;
+			}
+		}
 	}
 }

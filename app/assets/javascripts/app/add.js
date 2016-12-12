@@ -2,23 +2,31 @@ var Add = function() {
 
 	'use strict';
 	
-	var $submenuToggler = $('.add');
+	var $addToggler = $('.add');
 	var MAX_CHARACTERS = 139;
 
 	var init = function() {
 
-		$submenuToggler.on('click', function(e) {_bindClick($(this));});
-
+		$addToggler.on('click', function(e) {_bindClick($(this));});
+		$addToggler.each(function() {
+			var $add = $(this);
+			var $close = $(this).find('.add__remove');
+			$close.on('click',function() {
+				console.log('hey');
+				$add.parent().hide();
+				$add.parent().prev().removeClass('feed__row--with-add');
+			});
+		})
 	};
 
 	var _bindClick = function($elem) {
-
-		$elem.addClass('add--active');
-		var $input = $elem.find('.add__text');
-		var $charactersCount = $elem.find('.add__character-count');
-		$input.focus();
-		$input.on('keydown, keyup', function() {_bindKeydown($input,$charactersCount);});
-
+		if (!$elem.hasClass('add-active')) {
+			$elem.addClass('add--active');
+			var $input = $elem.find('.add__text');
+			var $charactersCount = $elem.find('.add__character-count');
+			$input.focus();
+			$input.on('keydown, keyup', function() {_bindKeydown($input,$charactersCount);});
+		}
 	};
 
 	var _bindKeydown = function($input,$charactersCount) {

@@ -1,13 +1,18 @@
 <% class_small = '' if local_assigns[:class_small].nil? %>
 <% button_visible = '' if local_assigns[:button_visible].nil? %>
 
-<div class="block profile-overview <%= class_small + button_visible %>">
+<div class="block profile-overview profile-overview--following <%= class_small + button_visible %>">
 
   <div class="profile-overview--top">
 
     <a href="#">
       <%= image_tag("default_avatar.png", class: "profile-overview__avatar") %>
-      <p class="profile-overview__name text-center">Batoulele</p>
+      <p class="profile-overview__name text-center"><span>Batoulele</span>
+      <button class="follow-circle follow-circle--add">
+        <%= embedded_svg('icons/add.svg', class: 'follow-circle__icon') %>
+        <%= embedded_svg('icons/checkbox.svg', class: 'follow-circle__icon') %>
+      </button>
+      </p>
       <p class="profile-overview__handle text-center">~Batoulele_95</p>
     </a>
 
@@ -16,12 +21,12 @@
       <div class="profile-overview__buttons">
 
         <!-- if you follow him : button following -->
-        <button class="cta cta--fill profile-overview__button">
+        <button class="cta cta--fill profile-overview__button profile-overview__button--following">
           <%= embedded_svg('icons/checkbox.svg', class: 'profile-overview__icon profile-overview__icon--following') %> <span>Following</span>
         </button>
 
         <!-- if you don't follow him : button follow -->
-        <button class="cta cta--stroke profile-overview__button">
+        <button class="cta cta--stroke profile-overview__button profile-overview__button--follow">
           <%= embedded_svg('icons/add.svg', class: 'profile-overview__icon profile-overview__icon--follow') %> <span>Follow</span>
         </button>
         <!-- END -->

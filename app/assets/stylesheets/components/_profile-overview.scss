@@ -9,18 +9,6 @@
   width: 234px;
   padding-top: rem(25px);
 
-  &--small {
-    .profile-overview--top {
-      border:none;
-      padding-bottom: rem(10px);
-    }
-
-    .profile-overview__avatar {
-      width: 55px;
-      height: 55px;
-    }
-  }
-
   &--top {
     border-bottom: 1px solid $border-bottom-color;
     padding-bottom: rem(25px);
@@ -28,7 +16,8 @@
 
   &.buttons--isvisible {
     .profile-overview__buttons {
-      @include display(flex);
+      display: block;
+      text-align: center;
     }
 
     .profile-overview__localisation {
@@ -46,6 +35,10 @@
     font-size: rem(22px);
     color: $gray5;
     margin: rem(8px) rem(0px);
+    @include vertical-center-container;
+    span {
+      @include vertical-center-block;
+    }
   }
 
   &__handle {
@@ -56,14 +49,21 @@
   &__buttons {
 
     display: none;
-    @include justify-content(space-around);
+    @include vertical-center-container;
     margin-top: rem(20px);
   }
 
   &__button {
+    @include vertical-center-block;
     > span {
       @include vertical-center-block();
       font-family: $opensans-semibold;
+    }
+    &--follow {
+      display: inline-block;
+    }
+    &--following {
+      display: none;
     }
   }
 
@@ -113,6 +113,38 @@
       width: 8px;
     }
 
+  }
+
+  .follow-circle {
+    @include vertical-center-block;
+    display: none;
+  }
+
+  &--small {
+    .follow-circle {
+      display: inline-block;
+    }
+    .profile-overview__name {
+      margin-left: 28px;
+    }
+    .profile-overview--top {
+      border:none;
+      padding-bottom: rem(10px);
+    }
+
+    .profile-overview__avatar {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  &--following {
+    .profile-overview__button--follow {
+      display: none;
+    }
+    .profile-overview__button--following {
+      display: inline-block;
+    }
   }
 
 }

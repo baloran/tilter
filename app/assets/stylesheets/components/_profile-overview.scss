@@ -35,6 +35,10 @@
     font-size: rem(22px);
     color: $gray5;
     margin: rem(8px) rem(0px);
+    @include vertical-center-container;
+    span {
+      @include vertical-center-block;
+    }
   }
 
   &__handle {
@@ -111,7 +115,18 @@
 
   }
 
+  .follow-circle {
+    @include vertical-center-block;
+    display: none;
+  }
+
   &--small {
+    .follow-circle {
+      display: inline-block;
+    }
+    .profile-overview__name {
+      margin-left: 28px;
+    }
     .profile-overview--top {
       border:none;
       padding-bottom: rem(10px);

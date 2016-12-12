@@ -32,4 +32,10 @@
 			}
 		}
 	}
+
+	&__load {
+		@include display(flex);
+		@include justify-content(center);
+		padding: rem(20px) 0;
+	}
 }

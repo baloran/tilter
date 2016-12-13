@@ -1,19 +1,5 @@
 <section class="sidebar sidebar--left">
 
-  <%= render :partial => "components/profile-overview", locals: {button_visible: 'buttons--isvisible'} %>
-  <!-- Render this on homepage + single tilt page (not sure about the method, I just used it because it's convenient) -->
-  <% if current_page?('/') || current_page?('/tilt/:id') %>
-    <%= render "components/trends" %>
-  <% end %>
-  <!-- END -->
-
-  <!-- Render this on profile page -->
-  <% unless current_page?('/') || current_page?('/tilt/:id') %>
-    <%= render "components/mutual-follow" %>
-    <%= render "components/profile-medias" %>
-  <% end %>
-  <!-- END -->
-
-
+  <%= yield %>
 
 </section>

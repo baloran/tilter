@@ -1,14 +1,5 @@
 <section class="sidebar sidebar--right">
 
-  <!-- Render unless user is on homepage or single tilt page -->
-  <% unless current_page?('/') || current_page?('/tilt/:id') || current_page?('/users/sign_in') || current_page?('/users/sign_up') %>
-    <%= render "components/suggestions" %>
-    <%= render "components/trends" %>
-  <% end %>
-
-  <% if current_page?('/') || current_page?('/tilt/:id') %>
-    <%= render "components/suggestions" %>
-  <% end %>
-  <!-- END -->
+  <%= yield %>
 
 </section>

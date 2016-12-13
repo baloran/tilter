@@ -12,8 +12,7 @@ var Add = function() {
 			var $add = $(this);
 			var $close = $(this).find('.add__remove');
 			$close.on('click',function() {
-				console.log('hey');
-				$add.parent().hide();
+				$add.parent().addClass('feed__row--hidden');
 				$add.parent().prev().removeClass('feed__row--with-add');
 			});
 		})

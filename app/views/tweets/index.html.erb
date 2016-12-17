@@ -1,6 +1,11 @@
 <div class="container layout">
   <%= render "components/sidebar-left" do %>
-    <%= render "components/profile-overview" %>
+    <%= render "components/profile-overview" do %>
+      <div class="profile-overview--top">
+        <%= render "components/profile-overview-general" %>
+      </div>
+      <%= render "components/figures-profile"%>
+    <% end %>
     <%= render "components/trends" %>
   <% end %>
 

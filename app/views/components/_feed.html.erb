@@ -1,26 +1,49 @@
 <section class="feed block">
-	<div class="feed__row">	
-		<%= render "components/profile-picture" %>	
+	<div class="feed__row">
+		<%= render "components/profile-picture" %>
 		<%= render "components/add" %>
 	</div>
-	<div class="feed__row">	
-		<%= render "components/profile-picture" %>	
+	<div class="feed__row">
+		<%= render "components/profile-picture" %>
 		<%= render "components/tilt" %>
+	</div>
+	<div class="feed__row feed__row--hidden">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
+	</div>
+	<div class="feed__row">
+		<%= render "components/profile-picture" %>
+		<%= render "components/tilt" %>
+	</div>
+	<div class="feed__row feed__row--hidden">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
+	</div>
+	<div class="feed__row feed__row--with-reply">
+		<%= render "components/profile-picture" %>
+		<%= render "components/tilt" %>
+	</div>
+	<div class="feed__row feed__row--hidden">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
+	</div>
+	<div class="feed__row">
+		<%= render "components/profile-picture" %>
+		<%= render "components/tilt" %>
+	</div>
+	<div class="feed__row feed__row--hidden">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
 	</div>
 	<div class="feed__row">	
 		<%= render "components/profile-picture" %>	
 		<%= render "components/tilt" %>
 	</div>
-	<div class="feed__row feed__row--with-reply">	
-		<%= render "components/profile-picture" %>	
-		<%= render "components/tilt" %>
+	<div class="feed__row feed__row--hidden">	
+		<%= render "components/profile-picture" %>
+		<%= render :partial => "components/add", locals: {class_active: 'add--active', class_reply: 'add--reply'} %>
 	</div>
-	<div class="feed__row">	
-		<%= render "components/profile-picture" %>	
-		<%= render "components/tilt" %>
-	</div>
-	<div class="feed__row">	
-		<%= render "components/profile-picture" %>	
-		<%= render "components/tilt" %>
+	<div class="feed__load">
+		<button class="cta cta--fill">Load more</button>
 	</div>
 </section>

@@ -1,6 +1,12 @@
-<section class="add">
+<% class_active = '' if local_assigns[:class_active].nil? %>
+<% class_reply = '' if local_assigns[:class_reply].nil? %>
+
+<section class="add <%= class_active %>  <%= class_reply %>">
+	<button class="add__remove">
+		<%= embedded_svg('icons/close.svg') %>
+	</button>
 	<form action="#">
-		<div class="add__bait">	
+		<div class="add__bait">
 			<p>What makes you tilt today ?</p>
 			<label class="add__file-upload">
 				<%= embedded_svg('icons/picture.svg') %>	
@@ -14,7 +20,7 @@
 				<input type="file">
 			</label>
 			<div class="add__right">
-				<span class="add__character-count add__character-count--error">139</span>
+				<span class="add__character-count">139</span>
 				<button type="submit" class="cta cta--fill">
 				<%= embedded_svg('icons/strike.svg', class: 'cta__icon') %> <span>Tilt</span>
 					</button>

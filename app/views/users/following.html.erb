@@ -1,1 +1,25 @@
-<h1>User following</h1>
+<div class="container layout">
+
+  <%= render "components/sidebar-left" do %>
+  <%= render :layout => "components/profile-overview", locals: {button_visible: 'buttons--isvisible'} do %>
+    <div class="profile-overview--top">
+      <%= render "components/profile-overview-general" %>
+      <%= render "components/profile-overview-buttons" %>
+    </div>
+    <%= render "components/profile-overview-about" %>
+  <% end %>
+    <%= render "components/mutual-follow" %>
+    <%= render "components/profile-medias" %>
+  <% end %>
+
+  <%= render "components/main-container" do %>
+    <%= render "components/figures-feed" %>
+    <%= render "components/users-small" %>
+  <% end %>
+
+  <%= render "components/sidebar-right" do %>
+    <%= render "components/suggestions" %>
+    <%= render "components/trends" %>
+  <% end %>
+
+</div>

@@ -1,11 +1,28 @@
+.profiles {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
 .profile-overview {
 
-  width: 100%;
+  width: 234px;
   padding-top: rem(25px);
 
-  &__top {
+  &--top {
     border-bottom: 1px solid $border-bottom-color;
     padding-bottom: rem(25px);
+  }
+
+  &.buttons--isvisible {
+    .profile-overview__buttons {
+      display: block;
+      text-align: center;
+    }
+
+    .profile-overview__localisation {
+      display: inline-block;
+    }
   }
 
   &__avatar {
@@ -18,6 +35,10 @@
     font-size: rem(22px);
     color: $gray5;
     margin: rem(8px) rem(0px);
+    @include vertical-center-container;
+    span {
+      @include vertical-center-block;
+    }
   }
 
   &__handle {
@@ -27,15 +48,22 @@
 
   &__buttons {
 
-    @include display(flex);
-    @include justify-content(space-around);
+    display: none;
+    @include vertical-center-container;
     margin-top: rem(20px);
   }
 
   &__button {
+    @include vertical-center-block;
     > span {
       @include vertical-center-block();
       font-family: $opensans-semibold;
+    }
+    &--follow {
+      display: inline-block;
+    }
+    &--following {
+      display: none;
     }
   }
 
@@ -55,6 +83,67 @@
 
     &--tilt {
       width: 8px;
+    }
+  }
+
+  &__about {
+    padding: rem(15px) rem(15px) rem(10px);
+  }
+
+  &__description, &__localisation {
+    font-size: rem(13px);
+    color: $gray5;
+  }
+
+  &__description {
+    line-height: rem(18px);
+    margin-bottom: rem(10px);
+  }
+
+  &__localisation {
+
+    @include vertical-center-container();
+    display: none;
+
+    svg, span {
+      @include vertical-center-block();
+    }
+
+    svg {
+      width: 8px;
+    }
+
+  }
+
+  .follow-circle {
+    @include vertical-center-block;
+    display: none;
+  }
+
+  &--small {
+    .follow-circle {
+      display: inline-block;
+    }
+    .profile-overview__name {
+      margin-left: 28px;
+    }
+    .profile-overview--top {
+      border:none;
+      padding-bottom: rem(10px);
+    }
+
+    .profile-overview__avatar {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  &--following {
+    .profile-overview__button--follow {
+      display: none;
+    }
+    .profile-overview__button--following {
+      display: inline-block;
     }
   }
 

@@ -7,6 +7,12 @@
 
   &__item {
     text-align: center;
+
+    &--isactive, &:hover {
+      .figures__numbers, .figures__description {
+        color: $pink;
+      }
+    }
   }
 
   &__numbers {

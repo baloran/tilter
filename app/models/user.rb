@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   before_validation :assign_display_name
 
+  # Format validation is handled by Devise for e-mail & password
+  validates :email, presence: true
+  validates :password, presence: true
+
   MIN_USERNAME_LENGTH = 2
   MAX_USERNAME_LENGTH = 40
   validates :username, length: {
@@ -32,7 +36,11 @@ class User < ApplicationRecord
     message: "Your username must be between #{MIN_USERNAME_LENGTH} and "\
       "#{MAX_USERNAME_LENGTH} characters",
     allow_nil: false, allow_blank: false
-  }
+  }, format: {
+    with: /\A[a-z0-9\-_]+\z/i,
+    message: 'Your username must only contain alphanumeric characters, '\
+      'dashes and underscores'
+  }, presence: true, uniqueness: { case_sensitive: false }
 
   MIN_DISPLAY_NAME_LENGTH = 2
   MAX_DISPLAY_NAME_LENGTH = 40

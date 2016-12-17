@@ -9,7 +9,7 @@ en:
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: "Invalid e-mail or password"
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
@@ -65,6 +65,16 @@ en:
       models:
         user:
           attributes:
+            username:
+              blank: "Your username can’t be blank"
+              taken: "This username is already being used by another user"
+            password:
+              blank: "Your password can’t be blank"
+              too_short: "Your password must be at least 6 characters long"
+              too_long: "Your password must be less than 128 characters long"
+              invalid: "Your password is not in a valid format"
             email:
-              invalid: "Your e-mail doesn’t seem to be in a valid format"
+              blank: "Your e-mail can’t be blank"
+              invalid: "Your e-mail is not in a valid format"
+              taken: "This e-mail is already being used by another user"
 

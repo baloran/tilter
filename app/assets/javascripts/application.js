@@ -12,14 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require rails.validations
 //= require_directory ./app
 //= require turbolinks
 
-
 $(document).on('turbolinks:load', function () {
-
-  	var submenu = new Submenu();
-  	var add     = new Add();
-  	var tilt    = new Tilt();
-
+  var submenu = new Submenu();
+  var add     = new Add();
+  var tilt    = new Tilt();
+  
+  // Force reset all ClientSideValidations forms as there is currently an
+  // incompatibility bug with the gem and Turbolinks.
+  ClientSideValidations &&
+    ClientSideValidations.disableValidators() &&
+    $(ClientSideValidations.selectors.forms).validate();
 });

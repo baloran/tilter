@@ -41,6 +41,10 @@ gem 'closure_tree'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# Automatically adds validation in client side with same messages & logic as in back-end
+gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations', branch: 'rails5'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

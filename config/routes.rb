@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   get '/settings' => 'users#settings'
-  get '/users/:id' => 'users#show'
-  get '/users/:id/following' => 'users#following'
-  get '/users/:id/followers' => 'users#followers'
-  get '/users/:id/likes' => 'users#likes'
+  resources :users do
+    get '/following' => 'users#following'
+    get '/followers' => 'users#followers'
+    get '/likes' => 'users#likes'
+  end
 end

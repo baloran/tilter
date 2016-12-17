@@ -139,10 +139,8 @@
   }
 
   &--following {
+    .profile-overview__button--following,
     .profile-overview__button--follow {
-      display: none;
-    }
-    .profile-overview__button--following {
       display: inline-block;
     }
   }

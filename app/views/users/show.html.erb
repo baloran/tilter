@@ -1,6 +1,8 @@
 <div class="container layout">
   <%= render "components/sidebar-left" do %>
-    <%= render :layout => "components/profile-overview", locals: {button_visible: 'buttons--isvisible'} do %>
+    <%= render :layout => "components/profile-overview", locals: {
+      button_visible: 'buttons--isvisible'
+    } do %>
       <div class="profile-overview--top">
         <%= render "components/profile-overview-general" %>
         <%= render "components/profile-overview-buttons" %>

@@ -1,31 +1,29 @@
 <div class="block figures">
-
   <div class="figures__item figures__item--isactive">
-    <a href="#">
-      <p class="figures__numbers">1689</p>
+    <%= link_to user_path(@user) do %>
+      <p class="figures__numbers"><%= @user.tweets.count %></p>
       <p class="figures__description">TILTS</p>
-    </a>
+    <% end %>
   </div>
 
   <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">355</p>
+    <%= link_to user_following_path(@user) do %>
+      <p class="figures__numbers"><%= @user.follows.count %></p>
       <p class="figures__description">FOLLOWING</p>
-    </a>
+    <% end %>
   </div>
 
   <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">1337</p>
+    <%= link_to user_followers_path(@user) do %>
+      <p class="figures__numbers"><%= @user.followers.count %></p>
       <p class="figures__description">FOLLOWERS</p>
-    </a>
+    <% end %>
   </div>
 
   <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">1800</p>
+    <%= link_to user_likes_path(@user) do %>
+      <p class="figures__numbers"><%= @user.likes.count %></p>
       <p class="figures__description">LIKES</p>
-    </a>
+    <% end %>
   </div>
-
 </div>

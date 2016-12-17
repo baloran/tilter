@@ -2,6 +2,7 @@
 # naming instead and only the front-end and routes will show Tilt/Retilt, etc…
 class Tweet < ApplicationRecord
   belongs_to :user
+  has_many :tweets, dependent: :destroy
   has_many :retweets, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :tweet_hashtags, dependent: :destroy

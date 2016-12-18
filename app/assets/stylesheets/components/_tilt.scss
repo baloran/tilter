@@ -1,6 +1,7 @@
 .tilt {
 	padding: 10px 0;
 	&__account {
+    display: inline;
 		padding-bottom: 5px;
 		strong {
 			font-size: rem(12px);

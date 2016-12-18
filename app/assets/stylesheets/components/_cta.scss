@@ -26,6 +26,12 @@
     color: $white;
   }
 
+  &--fill:disabled {
+    cursor: not-allowed;
+    background: $gray3;
+    border-color: $gray3;
+  }
+
   &--stroke {
     background: transparent;
     color: $pink;

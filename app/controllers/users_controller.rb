@@ -6,6 +6,8 @@ class UsersController < ApplicationController
       :followers,
       :likes
     ).find(params[:id])
+
+    @tilts = @user.tweets
   end
 
   def following

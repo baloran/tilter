@@ -30,7 +30,7 @@
 			<span><%= number_to_human(tilt.retweets.count) %></span>
 		</div>
 
-		<div class="tilt__action">
+		<div class="tilt__action <%= (tilt.likes.map(&:user_id.to_proc).include?(current_user.id)) ? 'tilt__action--active' : '' %>">
       <%= link_to user_toggle_likes_path(user_id: current_user.id, tweet_id: tilt.id), remote: true do %>
   			<%= embedded_svg('icons/strike.svg') %>
   			<span><%= number_to_human(tilt.likes.count) %></span>

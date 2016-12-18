@@ -5,7 +5,8 @@ class TweetsController < ApplicationController
     following_list = current_user.follow_ids
     following_list.push(current_user.id)
 
-    @tilts = Tweet.roots.where(user_id: following_list)
+    @tilts = Tweet.roots.where(user_id: following_list).order('created_at DESC')
+    # @TODO: paginate
   end
 
   def create

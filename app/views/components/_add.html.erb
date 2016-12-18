@@ -37,5 +37,11 @@
 				</button>
       </div>
 		</div>
+
+    <input
+      type="hidden"
+      name="parent_tweet_id"
+      value="<%= local_assigns[:parent].nil? ? nil : parent.id %>"
+    >
 	<% end %>
 </section>

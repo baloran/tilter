@@ -10,7 +10,11 @@ class TweetsController < ApplicationController
   end
 
   def create
-    current_user.tweets.create(content: params[:content])
+    current_user.tweets.create(
+      content: params[:content],
+      parent_tweet_id: params[:parent_tweet_id]
+    )
+
     redirect_to tilts_path
   end
 

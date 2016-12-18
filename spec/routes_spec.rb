@@ -13,10 +13,6 @@ RSpec.describe 'Routes', type: :routing do
   end
 
   it 'handles custom users routes properly' do
-    expect(get: '/settings').to route_to(
-      controller: 'users',
-      action: 'settings'
-    )
 
     expect(get: '/users/1').to route_to(
       controller: 'users',

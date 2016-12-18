@@ -15,6 +15,8 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use Bourbon for stylesheets
+gem 'bourbon'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -32,6 +34,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# Adds hierarchy to models
+gem 'closure_tree'
+
+# Handles image uploads
+gem 'carrierwave'
+gem 'cloudinary'
+
+# Automatically adds validation in client side with same messages & logic as in back-end
+gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations', branch: 'rails5'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

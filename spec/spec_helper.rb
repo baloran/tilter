@@ -38,6 +38,7 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
+    ENV['FLOCK_DIR'] = Dir.mktmpdir
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
@@ -46,6 +47,10 @@ RSpec.configure do |config|
     DatabaseCleaner.cleaning do
       example.run
     end
+  end
+
+  config.after(:suite) do
+    FileUtils.remove_entry_secure ENV['FLOCK_DIR']
   end
 
   # rspec-mocks config goes here. You can use an alternate test double

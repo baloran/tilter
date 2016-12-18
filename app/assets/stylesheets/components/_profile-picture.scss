@@ -1,0 +1,8 @@
+.profile-picture {
+	padding: 10px 12px 10px 0;
+	@include border-box;
+	img {
+		width: 30px;
+		height: 30px;
+	}
+}

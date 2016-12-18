@@ -1,0 +1,37 @@
+.submenu {
+	position: absolute;
+	display: none;
+	bottom: 15px;
+	width: 94px;
+	background-color: $white;
+	box-shadow: 0 0 120px 0 rgba(0,0,0,0.15);
+	border-radius: 2px;
+	left: -10px;
+	&__item {
+		padding: 6px 9px;
+		font-size: rem(10px);
+		font-family: $opensans-reg;
+		letter-spacing: rem(-0.17px);
+		color: $gray2;
+		&:not(:last-child) {
+			border-bottom: 1px solid $gray1;
+		}
+		a:hover {
+			color: $pink;
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -7px;
+		left: 10px;
+		border-width: 7px 6px 0;
+		border-style: solid;
+		border-color: $white transparent;
+		display: block;
+		width: 0;
+	}
+	&--active {
+		display: block;
+	}
+}

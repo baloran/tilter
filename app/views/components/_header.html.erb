@@ -1,0 +1,35 @@
+<header class="header">
+	<div class="container">
+    <% if current_user.nil? %>
+      <div class="header__logo">
+        <%= embedded_svg('icons/strike.svg') %>
+      </div>
+    <% else %>
+      <ul class="header__menu">
+        <li class="header__menu-item header__menu-item--active">
+          <%= link_to 'Home', root_path %>
+        </li>
+        <!--
+          <li class="header__menu-item"><a href="#">Notifications</a></li>
+          <li class="header__menu-item"><a href="#">Messages</a></li>
+        -->
+      </ul>
+
+      <%= link_to root_path, class: 'header__logo' do %>
+        <%= embedded_svg('icons/strike.svg') %>
+      <% end %>
+
+      <div class="header__right">
+        <!--
+          <form action="#" class="searchbox">
+            <input type="text" class="searchbox__text">
+            <input type="submit" class="searchbox__submit" value="">
+          </form>
+        -->
+        <%= link_to settings_path, class: 'header__profile-picture' do %>
+          <%= image_tag(current_user.avatar.url) %>
+        <% end %>
+      </div>
+    <% end %>
+	</div>
+</header>

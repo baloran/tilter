@@ -1,0 +1,7 @@
+.sidebar {
+  width: 234px;
+
+  .block:not(:last-child) {
+    margin-bottom: rem(30px);
+  }
+}

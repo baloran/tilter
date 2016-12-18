@@ -1,0 +1,136 @@
+/*--------------------------------------------------------------
+Mixins
+--------------------------------------------------------------*/
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin vertical-center-container() {
+
+    white-space: nowrap;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        margin-right: -0.25em;
+        vertical-align: middle;
+    }
+}
+
+@mixin vertical-center-block() {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+@mixin clearfix {
+    &:after {
+        content: ".";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0px;
+    }
+}
+
+@mixin spread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin inner-gutter( $side: '' ) {
+    box-sizing: border-box;
+    @if $side == '' {
+        padding: 50px;
+    }
+    @else {
+        padding: $side;
+    }
+}
+
+@mixin fullscreen {
+    min-height: 100vh;
+    height: 100vh;
+}
+@mixin border-box {
+    box-sizing: border-box;
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-vertical {
+  @media (min-width: #{$tablet-width}) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin bigdesktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+Functions
+--------------------------------------------------------------*/
+
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@function rem($px, $base: $base-font-size) {
+    @return ($px / $base) * 1rem;
+}

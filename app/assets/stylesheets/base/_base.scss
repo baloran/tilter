@@ -1,0 +1,40 @@
+html, body {
+	background-color: #FBFBFB;
+	font-family: $opensans-reg;
+}
+.container {
+	width: 90%;
+	max-width: 1024px;
+	margin: auto;
+	position: relative;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.layout {
+	@include display(flex);
+	@include justify-content(space-between);
+	margin-top: rem(40px);
+}
+
+.block {
+	background-color: $white;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.03);
+
+	@include border-box;
+}
+
+.tilt__mention {
+	color: $pink;
+}
+
+.field_with_errors {
+  display: inline
+}

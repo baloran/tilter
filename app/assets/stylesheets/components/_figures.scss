@@ -1,0 +1,29 @@
+.figures {
+
+  font-family: $opensans-semibold;
+  padding: rem(20px) 0;
+  @include display(flex);
+  @include justify-content(space-around);
+
+  &__item {
+    text-align: center;
+
+    &--isactive, &:hover {
+      .figures__numbers, .figures__description {
+        color: $pink;
+      }
+    }
+  }
+
+  &__numbers {
+    color: $gray3;
+    margin-bottom: rem(6px);
+  }
+
+  &__description {
+    color: $gray2;
+    font-size: rem(10px);
+    text-transform: uppercase;
+  }
+
+}

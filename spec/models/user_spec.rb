@@ -58,7 +58,6 @@ RSpec.describe 'User', type: :model do
       password: 'password',
       email: 'baloranandco@gmail.com'
     )
-    # As uniqueness of email is handled by Devise, it won’t raise an exception.
     expect(other_user.valid?).to eq(false)
   end
 
@@ -72,13 +71,12 @@ RSpec.describe 'User', type: :model do
 
     # Here, the uniqueness is handled by ActiveRecord directly and will
     # raise an exception as expected.
-    expect do
-      User.create(
-        username: 'baloran',
-        password: 'password',
-        email: 'stammeister@gmail.com'
-      )
-    end.to raise_exception(ActiveRecord::RecordNotUnique)
+    other_user = User.create(
+      username: 'baloran',
+      password: 'password',
+      email: 'stammeister@gmail.com'
+    )
+    expect(other_user.valid?).to eq(false)
   end
 
   it 'can have a username between 2 and 40 characters' do
@@ -102,6 +100,16 @@ RSpec.describe 'User', type: :model do
     expect(user.valid?).to eq(true)
   end
 
+  it 'has a proper error message for username not being valid' do
+    user = User.create(
+      display_name: 'baloran',
+      password: 'password',
+      email: 'baloranandco@gmail.com'
+    )
+
+    expect(user.errors.messages[:username].first).not_to be_empty
+  end
+
   it 'can have a display name between 2 and 40 characters' do
     user = User.create(
       username: 'baloran',
@@ -121,6 +129,17 @@ RSpec.describe 'User', type: :model do
     expect(user.valid?).to eq(true)
   end
 
+  it 'has a proper error message for display name not being valid' do
+    user = User.create(
+      username: 'baloran',
+      display_name: 'b',
+      password: 'password',
+      email: 'baloranandco@gmail.com'
+    )
+
+    expect(user.errors.messages[:display_name].first).not_to be_empty
+  end
+
   it 'requires a valid email' do
     user = User.new
     user.username = 'baloran'
@@ -134,6 +153,17 @@ RSpec.describe 'User', type: :model do
 
     user.email = 'baloranandco@gmail.com'
     expect(user.valid?).to eq(true)
+  end
+
+  it 'has a proper error message for email not being valid' do
+    user = User.create(
+      username: 'baloran',
+      display_name: 'baloran',
+      password: 'password',
+      email: 'baloranandco'
+    )
+
+    expect(user.errors.messages[:email].first).not_to be_empty
   end
 
   it 'can have a description that has a maximum of 200 characters' do
@@ -151,5 +181,31 @@ RSpec.describe 'User', type: :model do
 
     user.description = (0..500).map { 'X' }.join
     expect(user.valid?).to eq(false)
+  end
+
+  it 'has a proper error message for description being too long' do
+    user = User.create(
+      username: 'baloran',
+      password: 'password',
+      email: 'baloranandco@gmail.com',
+      description: (0..500).map { 'X' }.join
+    )
+
+    expect(user.errors.messages[:description].first).not_to be_empty
+  end
+
+  it 'has a default avatar if not set' do
+    user = User.new(
+      username: 'baloran',
+      display_name: 'bal0ran',
+      password: 'password',
+      email: 'baloranandco@gmail.com'
+    )
+
+    expect(user.valid?).to be(true)
+    user.save
+
+    found = User.last
+    expect(found.avatar.url).to_not be_empty
   end
 end

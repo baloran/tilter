@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
-  
+
   def update_resource(resource, params)
     resource.update_without_password(params)
   end

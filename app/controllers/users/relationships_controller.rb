@@ -1,7 +1,6 @@
 class Users::RelationshipsController < ApplicationController
-  
   # POST /users/follow
-  def toggleFollow
+  def toggle_follow
     # if user.follow do
     #   unfollow(user)
     # else

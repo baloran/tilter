@@ -22,35 +22,4 @@ RSpec.describe Users::RegistrationsController, type: :controller do
     expect(user.email).to eq('baloranandco@gmail.com')
     expect(response).to have_http_status(302)
   end
-
-  it 'cannot be created' do
-    @request.env['devise.mapping'] = Devise.mappings[:user]
-    post :create, params: {
-      user: {
-        username: 'baloran',
-        password: 'mdrjesuisuntestdeoufjpp',
-        password_confirmation: 'mdrjesuisuntestdeoufjpp'
-      }
-    }
-
-    expect(User.count).to eq(0)
-    expect(response).to have_http_status(:error)
-  end
-end
-
-RSpec.describe Users::ProfilesController, type: :controller do
-  render_views
-
-  it 'can see profile' do
-    User.create(
-      username: 'baloran',
-      password: 'password',
-      email: 'baloranandco@gmail.com'
-    )
-
-    get :profile, params: { username: 'baloran' }
-
-    expect(response.body).to include('baloran')
-    expect(response).to have_http_status(:success)
-  end
 end

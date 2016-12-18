@@ -27,19 +27,19 @@ RSpec.describe 'Routes', type: :routing do
     expect(get: '/users/1/following').to route_to(
       controller: 'users',
       action: 'following',
-      id: '1'
+      user_id: '1'
     )
 
     expect(get: '/users/1/followers').to route_to(
       controller: 'users',
       action: 'followers',
-      id: '1'
+      user_id: '1'
     )
 
     expect(get: '/users/1/likes').to route_to(
       controller: 'users',
       action: 'likes',
-      id: '1'
+      user_id: '1'
     )
   end
 end

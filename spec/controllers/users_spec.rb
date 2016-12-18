@@ -4,7 +4,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
   render_views
 
   it 'can be created with form' do
-    @request.env["devise.mapping"] = Devise.mappings[:user]
+    @request.env['devise.mapping'] = Devise.mappings[:user]
     post :create, params: {
       user: {
         username: 'baloran',
@@ -24,7 +24,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
   end
 
   it 'cannot be created' do
-    @request.env["devise.mapping"] = Devise.mappings[:user]
+    @request.env['devise.mapping'] = Devise.mappings[:user]
     post :create, params: {
       user: {
         username: 'baloran',
@@ -42,7 +42,7 @@ RSpec.describe Users::ProfilesController, type: :controller do
   render_views
 
   it 'can see profile' do
-    user = User.create(
+    User.create(
       username: 'baloran',
       password: 'password',
       email: 'baloranandco@gmail.com'

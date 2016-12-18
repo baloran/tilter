@@ -6,8 +6,12 @@
       </div>
     <% else %>
       <ul class="header__menu">
-        <li class="header__menu-item header__menu-item--active">
+        <li class="header__menu-item <%= current_page?(root_path) ? 'header__menu-item--active' : '' %>">
           <%= link_to 'Home', root_path %>
+        </li>
+
+        <li class="header__menu-item <%= current_page?(settings_path) ? 'header__menu-item--active' : '' %>">
+          <%= link_to 'Settings', settings_path %>
         </li>
         <!--
           <li class="header__menu-item"><a href="#">Notifications</a></li>
@@ -26,7 +30,7 @@
             <input type="submit" class="searchbox__submit" value="">
           </form>
         -->
-        <%= link_to settings_path, class: 'header__profile-picture' do %>
+        <%= link_to user_path(current_user), class: 'header__profile-picture' do %>
           <%= image_tag(current_user.avatar.url) %>
         <% end %>
       </div>

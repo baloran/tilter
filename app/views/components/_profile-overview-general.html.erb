@@ -1,10 +1,15 @@
-<a href="#">
-  <%= image_tag("default_avatar.png", class: "profile-overview__avatar") %>
-  <p class="profile-overview__name text-center"><span>Batoulele</span>
-  <button class="follow-circle follow-circle--add">
-    <%= embedded_svg('icons/add.svg', class: 'follow-circle__icon') %>
-    <%= embedded_svg('icons/checkbox.svg', class: 'follow-circle__icon') %>
-  </button>
+<%= link_to user_path(user) do %>
+  <%= image_tag(user.avatar.url, class: "profile-overview__avatar") %>
+  <p class="profile-overview__name text-center">
+    <span><%= user.display_name %></span>
+
+    <button class="follow-circle follow-circle--add">
+      <%= embedded_svg('icons/add.svg', class: 'follow-circle__icon') %>
+      <%= embedded_svg('icons/checkbox.svg', class: 'follow-circle__icon') %>
+    </button>
   </p>
-  <p class="profile-overview__handle text-center">~Batoulele_95</p>
-</a>
+
+  <p class="profile-overview__handle text-center">
+    @<%=user.username %>
+  </p>
+<% end %>

@@ -1,17 +1,28 @@
 <div class="profile-overview__buttons">
-
   <!-- if you follow him : button following -->
   <button class="cta cta--fill profile-overview__button profile-overview__button--following">
-    <%= embedded_svg('icons/checkbox.svg', class: 'profile-overview__icon profile-overview__icon--following') %> <span>Following</span>
+    <%= embedded_svg(
+      'icons/checkbox.svg',
+      class: 'profile-overview__icon profile-overview__icon--following'
+    ) %>
+    <span>Following</span>
   </button>
 
   <!-- if you don't follow him : button follow -->
   <button class="cta cta--stroke profile-overview__button profile-overview__button--follow">
-    <%= embedded_svg('icons/add.svg', class: 'profile-overview__icon profile-overview__icon--follow') %> <span>Follow</span>
+    <%= embedded_svg(
+      'icons/add.svg',
+      class: 'profile-overview__icon profile-overview__icon--follow'
+    ) %>
+    <span>Follow</span>
   </button>
   <!-- END -->
 
-  <button class="cta cta--fill profile-overview__button">
-    <%= embedded_svg('icons/strike.svg', class: 'profile-overview__icon profile-overview__icon--tilt') %> <span>Tilt to</span>
-  </button>
+  <!-- <button class="cta cta--fill profile-overview__button">
+    <%# embedded_svg(
+      'icons/strike.svg',
+      class: 'profile-overview__icon profile-overview__icon--tilt'
+    ) %>
+    <span>Tilt to</span>
+  </button> -->
 </div>

@@ -1,57 +1,14 @@
 <div class="profiles">
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-
-  <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
+<% if @follow.length > 0 %>
+    <% @follow.each do |user| %>
+      <%= render :layout => "components/profile-overview", locals: {class_small: 'profile-overview--small'} do %>
+        <div class="profile-overview--top">
+          <%= render "components/profile-overview-general", user: user%>
+        </div>
+        <%= render "components/profile-overview-about" %>
+      <% end %>
+    <% end %>
+<% else %>
+  <p>Nothing here!</p> 
+<% end %>
 </div>

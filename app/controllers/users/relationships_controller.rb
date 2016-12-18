@@ -1,9 +1,9 @@
 class Users::RelationshipsController < ApplicationController
   
-  before_action :authenticate_user!, only: [:toggleFollow]
+  before_action :authenticate_user!, only: [:toggle_follow]
 
   # GET /users/follow/followed_id
-  def toggleFollow
+  def toggle_follow
     rs = Relationship.where(follower_id: current_user.id, followed_id: params['followed_id']).first
     if rs
       rs.delete()

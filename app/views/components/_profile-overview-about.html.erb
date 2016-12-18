@@ -1,4 +1,8 @@
 <div class="profile-overview__about">
-  <p class="profile-overview__description">4th year student at <a href="#" class="tilt__mention">~Hetic</a> - Junior Web Designer.</p>
-  <p class="profile-overview__localisation"><%= embedded_svg('icons/pin.svg') %><span>Paris, France</span></p>
+  <p class="profile-overview__description">
+    <%= current_user.description %>
+  </p>
+  <!-- <p class="profile-overview__localisation">
+    <%# embedded_svg('icons/pin.svg') %><span>Paris, France</span>
+  </p> -->
 </div>

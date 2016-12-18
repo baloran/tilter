@@ -1,22 +1,22 @@
 <div class="figures">
-
   <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">1689</p>
+    <%= link_to user_path(current_user) do %>
+      <p class="figures__numbers"><%= current_user.tweets.count %></p>
       <p class="figures__description">TILTS</p>
-    </a>
-  </div>
-  <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">355</p>
-      <p class="figures__description">FOLLOWING</p>
-    </a>
-  </div>
-  <div class="figures__item">
-    <a href="#">
-      <p class="figures__numbers">1337</p>
-      <p class="figures__description">FOLLOWERS</p>
-    </a>
+    <% end %>
   </div>
 
+  <div class="figures__item">
+    <%= link_to user_following_path(current_user) do %>
+      <p class="figures__numbers"><%= current_user.follows.count %></p>
+      <p class="figures__description">FOLLOWING</p>
+    <% end %>
+  </div>
+
+  <div class="figures__item">
+    <%= link_to user_followers_path(current_user) do %>
+      <p class="figures__numbers"><%= current_user.followers.count %></p>
+      <p class="figures__description">FOLLOWERS</p>
+    <% end %>
+  </div>
 </div>

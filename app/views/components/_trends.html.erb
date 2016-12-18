@@ -1,29 +1,13 @@
 <section class="trends block">
 	<h3 class="trends__title">What makes the World tilt</h3>
 	<ul>
-		<li class="trends__item">
-			<a href="#">
-				<strong>#trump</strong><br>
-				<span class="trends__stat">476K Tilts</span>
-			</a>
-		</li>
-		<li class="trends__item">
-			<a href="#">
-				<strong>#trump</strong><br>
-				<span class="trends__stat">476K Tilts</span>
-			</a>
-		</li>
-		<li class="trends__item">
-			<a href="#">
-				<strong>#trump</strong><br>
-				<span class="trends__stat">476K Tilts</span>
-			</a>
-		</li>
-		<li class="trends__item">
-			<a href="#">
-				<strong>#trump</strong><br>
-				<span class="trends__stat">476K Tilts</span>
-			</a>
-		</li>
+    <% @top_hashtags.each do |hashtag| %>
+      <li class="trends__item">
+        <a href="#">
+          <strong>#<%= hashtag.term %></strong><br>
+          <span class="trends__stat">476K Tilts</span>
+        </a>
+      </li>
+    <% end %>
 	</ul>
 </section>

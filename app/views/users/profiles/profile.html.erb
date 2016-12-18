@@ -1,5 +1,9 @@
+
+
 <%= link_to "Disconect", destroy_user_session_path, :method => :delete %>
 
+<%= link_to "Follow", toggle_follow_user_path(followed_id: @user.id), :method => :get, remote: true  %>
 <%= link_to "Follow", toggle_follow_user_path(followed_id: @user.id), :method => :get, remote: true, class: 'toggle-follow--link--js'  %>
+
 <h2><%= @user.username %></h2>
 <h3><%= @user.email %></h3>

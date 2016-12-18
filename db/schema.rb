@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20161210160436) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "parent_tweet_id"
-    t.integer  "root_tweet_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

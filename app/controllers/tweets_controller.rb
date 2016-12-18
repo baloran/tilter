@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
 
   def show
     @tilt = Tweet.find(params[:id])
-    @root = @tilt.root
+    @root = @tilt.root if @tilt.root != @tilt
     @answers = @tilt.children
   end
 end

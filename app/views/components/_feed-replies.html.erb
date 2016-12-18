@@ -4,11 +4,35 @@
       <%= render "components/profile-picture", user: @root.user %>
       <%= render "components/tilt", tilt: @root %>
     </div>
+
+    <div class="feed__row feed__row--hidden">
+      <%= render :partial => "components/profile-picture", locals: {
+        user: current_user
+      } %>
+
+      <%= render :partial => "components/add", locals: {
+        class_active: 'add--active',
+        class_reply: 'add--reply',
+        parent: @root
+      } %>
+    </div>
   <% end %>
 
   <div class="feed__row <%= 'feed__row--with-reply' if @answers.count > 0 %>">
     <%= render "components/profile-picture", user: @tilt.user %>
     <%= render "components/tilt", tilt: @tilt %>
+  </div>
+
+  <div class="feed__row feed__row--hidden">
+    <%= render :partial => "components/profile-picture", locals: {
+      user: current_user
+    } %>
+
+    <%= render :partial => "components/add", locals: {
+      class_active: 'add--active',
+      class_reply: 'add--reply',
+      parent: @tilt
+    } %>
   </div>
 
   <% @answers.each_with_index do |tilt, index| %>

@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
 
   def create
     current_user.tweets.create(content: params[:content])
+    redirect_to tilts_path
   end
 
   def show

@@ -1,8 +1,9 @@
 var Add = function() {
 
 	'use strict';
-	
+
 	var $addToggler = $('.add');
+  var $addButton = $addToggler.find('button');
 	var MAX_CHARACTERS = 139;
 
 	var init = function() {
@@ -31,10 +32,13 @@ var Add = function() {
 	var _bindKeydown = function($input,$charactersCount) {
 		var charactersLeft = MAX_CHARACTERS - $input.val().length;
 		$charactersCount.text(charactersLeft);
+
 		if (charactersLeft < 0) {
 			$charactersCount.addClass('add__character-count--error');
+      $addButton.attr('disabled', true)
 		} else {
 			$charactersCount.removeClass('add__character-count--error');
+      $addButton.attr('disabled', false)
 		}
 	};
 

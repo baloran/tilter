@@ -15,12 +15,7 @@ class UsersController < ApplicationController
       :followers,
       :likes
     ).find(params[:user_id])
-    @follow = User.includes(
-      :tweets,
-      :follows,
-      :followers,
-      :likes
-    ).find(@user.follows.map(&:id.to_proc))
+    @follow = User.find(@user.follows.map(&:followed_id.to_proc))
   end
 
   def followers

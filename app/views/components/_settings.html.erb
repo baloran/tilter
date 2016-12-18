@@ -1,30 +1,61 @@
 <section class="block main-block settings">
-
   <div class="main-block__title text-center">
-    Account <span class="main-block__catchline">Change your basic settings and other stuff.</span>
+    Account
+    <span class="main-block__catchline">Change your basic settings and other stuff.</span>
   </div>
 
-  <form action="#" class="form">
-
+  <%= form_for(
+    current_user,
+    as: :user,
+    url: registration_path(:user),
+    html: { method: :put, class: 'form' }
+  ) do |f| %>
     <div class="form__row">
-      <label for="username" class="form__label">Username</label>
-      <input type="text" id="username" class="form__input" value="Kappa">
+      <%= f.label :display_name, class: 'form__label' %>
+      <%= f.text_field :display_name,
+        autofocus: true,
+        value: current_user.display_name,
+        class: 'form__input'
+      %>
     </div>
 
     <div class="form__row">
-      <label for="password" class="form__label">Password</label>
-      <input type="password" id="password" class="form__input" value="randomstring">
+      <%= f.label :email, class: 'form__label' %>
+      <%= f.email_field :email,
+        value: current_user.email,
+        class: 'form__input'
+      %>
     </div>
 
     <div class="form__row">
-      <label for="localisation" class="form__label">Localisation</label>
-      <input type="type" id="localisation" class="form__input" value="Paris (FR)">
+      <%= f.label :password, 'Password', class: 'form__label' %>
+      <%= f.password_field :password,
+        autocomplete: 'off',
+        class: 'form__input'
+      %>
     </div>
 
-    <a href="#" class="form__delete">Deactivate my account</a>
+    <!--
+      <div class="form__row">
+        <label for="localisation" class="form__label">Localisation</label>
+        <input type="type" id="localisation" class="form__input" value="Paris (FR)">
+      </div>
+    -->
 
-    <input type="submit" value="Save preferences" class="cta cta--stroke">
+    <%= link_to 'Deactivate my account',
+      registration_path(:user),
+      data: { confirm: 'Are you sure you wish to deactivate your account?' },
+      method: :delete,
+      class: 'form__delete'
+    %>
 
-  </form>
+    <%= link_to 'Log out',
+      destroy_session_path(:user),
+      data: { confirm: 'Are you sure you wish to log out of your account?' },
+      method: :delete,
+      class: 'form__delete'
+    %>
 
+    <%= f.submit 'Save preferences', class: 'cta cta--stroke' %>
+  <% end %>
 </section>

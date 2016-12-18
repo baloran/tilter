@@ -1,14 +1,12 @@
 <div class="container layout">
   <%= render "components/sidebar-left" do %>
-  <%= render :layout => "components/profile-overview", locals: {button_visible: 'buttons--isvisible'} do %>
-    <div class="profile-overview--top">
-      <%= render "components/profile-overview-general" %>
-      <%= render "components/profile-overview-buttons" %>
-    </div>
-    <%= render "components/profile-overview-about" %>
-  <% end %>
-    <%= render "components/mutual-follow" %>
-    <%= render "components/profile-medias" %>
+    <%= render :layout => "components/profile-overview", locals: {button_visible: 'buttons--isvisible'} do %>
+      <div class="profile-overview--top">
+        <%= render "components/profile-overview-general", user: @user %>
+        <%= render "components/profile-overview-buttons" %>
+      </div>
+      <%= render "components/profile-overview-about", user: @user %>
+    <% end %>
   <% end %>
 
   <%= render "components/main-container" do %>
@@ -16,8 +14,5 @@
     <%= render "components/feed" %>
   <% end %>
 
-  <%= render "components/sidebar-right" do %>
-    <%= render "components/suggestions" %>
-    <%# render "components/trends" %>
-  <% end %>
+  <%= render "components/sidebar-right" %>
 </div>

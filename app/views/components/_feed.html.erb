@@ -11,7 +11,7 @@
       <%= render :partial => "components/profile-picture", locals: {
         user: tilt.user
       } %>
-      <%= render "components/tilt" %>
+      <%= render :partial => "components/tilt", locals: { tilt: tilt } %>
     </div>
 
     <div class="feed__row feed__row--hidden">

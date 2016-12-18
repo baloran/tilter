@@ -5,26 +5,37 @@
 	<button class="add__remove">
 		<%= embedded_svg('icons/close.svg') %>
 	</button>
-	<form action="#">
+
+	<%= form_for(
+    Tweet.new,
+    as: :tilt,
+    url: tilts_path,
+    html: { method: :post }
+  ) do |f| %>
 		<div class="add__bait">
 			<p>What makes you tilt today ?</p>
-			<label class="add__file-upload">
-				<%= embedded_svg('icons/picture.svg') %>
+
+      <!-- <label class="add__file-upload">
+				<%# embedded_svg('icons/picture.svg') %>
 				<input type="file">
-			</label>
+			</label> -->
 		</div>
-		<textarea class="add__text"></textarea>
+
+    <textarea name="content" class="add__text"></textarea>
+
 		<div class="add__bottom">
-			<label class="add__file-upload">
-				<%= embedded_svg('icons/picture.svg') %>
+      <!-- <label class="add__file-upload">
+				<%# embedded_svg('icons/picture.svg') %>
 				<input type="file">
-			</label>
+			</label> -->
+
 			<div class="add__right">
 				<span class="add__character-count">139</span>
 				<button type="submit" class="cta cta--fill">
-				<%= embedded_svg('icons/strike.svg', class: 'cta__icon') %> <span>Tilt</span>
-					</button>
-      		</div>
+				  <%= embedded_svg('icons/strike.svg', class: 'cta__icon') %>
+          <span>Tilt</span>
+				</button>
+      </div>
 		</div>
-	</form>
+	<% end %>
 </section>

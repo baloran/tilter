@@ -1,15 +1,19 @@
 <section class="tilt">
-	<div class="tilt__account">
-		<strong><%= tilt.user.display_name %></strong>
-		<span>
-      @<%= tilt.user.username %> •
-      <%= distance_of_time_in_words(tilt.created_at) %>
-    </span>
-	</div>
+  <%= link_to user_path(tilt.user) do %>
+  	<div class="tilt__account">
+  		<strong><%= tilt.user.display_name %></strong>
+  		<span>
+        @<%= tilt.user.username %> •
+        <%= time_ago_in_words(tilt.created_at) %>
+      </span>
+  	</div>
+  <% end %>
 
-	<div class="tilt__content">
-    <%= tilt.content %>
-	</div>
+  <%= link_to tilt_path(tilt) do %>
+  	<div class="tilt__content">
+      <%= tilt.content %>
+  	</div>
+  <% end %>
 
   <!-- <div class="tilt__picture">
 		<%# image_tag("dummy-1.png") %>

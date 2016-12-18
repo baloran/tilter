@@ -8,6 +8,10 @@ class TweetsController < ApplicationController
     @tilts = Tweet.roots.where(user_id: following_list)
   end
 
+  def create
+    current_user.tweets.create(content: params[:content])
+  end
+
   def show
     # Get a single tilt here
   end

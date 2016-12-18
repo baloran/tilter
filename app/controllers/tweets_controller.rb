@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
       hashtag.slice!(0) # Remove `#` from the hashtag
       existing_hashtag = Hashtag.where(term: hashtag).first
 
-      if (existing_hashtag.nil?)
+      if existing_hashtag.nil?
         tweet.hashtags.create(term: hashtag)
       else
         TweetHashtag.create(hashtag_id: existing_hashtag.id, tweet_id: tweet.id)

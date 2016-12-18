@@ -10,7 +10,13 @@ class Users::RelationshipsController < ApplicationController
     else
       createRelation = Relationship.create(follower_id: current_user.id, followed_id: params['followed_id'])
       if createRelation.save
-        return true
+        respond_to do |format|
+          if request.xhr?
+            format.html do
+              render json: rs.to_json
+            end
+          end
+        end
       else
         return false
       end

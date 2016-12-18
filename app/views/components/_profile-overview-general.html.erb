@@ -1,7 +1,7 @@
-<%= link_to user_path(current_user) do %>
-  <%= image_tag(current_user.avatar.url, class: "profile-overview__avatar") %>
+<%= link_to user_path(user) do %>
+  <%= image_tag(user.avatar.url, class: "profile-overview__avatar") %>
   <p class="profile-overview__name text-center">
-    <span><%= current_user.display_name %></span>
+    <span><%= user.display_name %></span>
 
     <button class="follow-circle follow-circle--add">
       <%= embedded_svg('icons/add.svg', class: 'follow-circle__icon') %>
@@ -10,6 +10,6 @@
   </p>
 
   <p class="profile-overview__handle text-center">
-    @<%=current_user.username %>
+    @<%=user.username %>
   </p>
 <% end %>

@@ -11,11 +11,23 @@ class UsersController < ApplicationController
   end
 
   def following
-    # Get all user with :id param following here
+    @user = User.includes(
+      :tweets,
+      :follows,
+      :followers,
+      :likes
+    ).find(params[:user_id])
+    @follow = User.find(@user.follows.map(&:followed_id.to_proc))
   end
 
   def followers
-    # Get all user with :id param followers here
+    @user = User.includes(
+      :tweets,
+      :follows,
+      :followers,
+      :likes
+    ).find(params[:user_id])
+    @follow = User.find(@user.followers.map(&:id.to_proc))
   end
 
   def likes

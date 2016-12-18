@@ -2,7 +2,7 @@
   <%= render "components/sidebar-left" do %>
     <%= render "components/profile-overview" do %>
       <div class="profile-overview--top">
-        <%= render "components/profile-overview-general" %>
+        <%= render "components/profile-overview-general", user: current_user %>
       </div>
       <%= render "components/figures-profile"%>
     <% end %>

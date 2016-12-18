@@ -18,7 +18,8 @@ class TweetsController < ApplicationController
     hashtags = params[:content].scan(/\B#\w+/)
 
     hashtags.each do |hashtag|
-      existing_hashtag = Hashtag.find(term: hashtag)
+      hashtag.slice!(0) # Remove `#` from the hashtag
+      existing_hashtag = Hashtag.where(term: hashtag).first
 
       if (existing_hashtag.nil?)
         tweet.hashtags.create(term: hashtag)

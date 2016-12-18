@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.includes(
       :tweets,
+      :retweets,
       :follows,
       :followers,
       :likes
@@ -11,22 +12,12 @@ class UsersController < ApplicationController
   end
 
   def following
-    @user = User.includes(
-      :tweets,
-      :follows,
-      :followers,
-      :likes
-    ).find(params[:user_id])
+    @user = User.includes(:follows).find(params[:user_id])
     @follow = User.find(@user.follows.map(&:followed_id.to_proc))
   end
 
   def followers
-    @user = User.includes(
-      :tweets,
-      :follows,
-      :followers,
-      :likes
-    ).find(params[:user_id])
+    @user = User.includes(:followers).find(params[:user_id])
     @follow = User.find(@user.followers.map(&:follower_id.to_proc))
   end
 

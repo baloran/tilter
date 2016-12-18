@@ -4,10 +4,14 @@
       button_visible: 'buttons--isvisible'
     } do %>
       <div class="profile-overview--top">
-        <%= render "components/profile-overview-general", user: @tilt.user %>
+        <%= render "components/profile-overview-general",
+          user: (!@root.nil? ? @root.user : @tilt.user)
+        %>
         <%= render "components/profile-overview-buttons" %>
       </div>
-      <%= render "components/profile-overview-about", user: @tilt.user %>
+      <%= render "components/profile-overview-about",
+        user: (!@root.nil? ? @root.user : @tilt.user)
+      %>
     <% end %>
   <% end %>
 

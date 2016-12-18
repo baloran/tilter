@@ -28,11 +28,12 @@ class TweetsController < ApplicationController
       end
     end
 
-    redirect_to tilts_path
+    redirect_to tilt_path(tweet)
   end
 
   def show
     @tilt = Tweet.find(params[:id])
+    @root = @tilt.root
     @answers = @tilt.children
   end
 end

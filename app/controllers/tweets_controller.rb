@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # Get all tilts here
+    @tilts = Tweet.all
   end
 
   def show

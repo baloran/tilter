@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
-    # Get all user with :id param tweets here
+    @user = User.includes(
+      :tweets,
+      :follows,
+      :followers,
+      :likes
+    ).find(params[:id])
   end
 
   def following

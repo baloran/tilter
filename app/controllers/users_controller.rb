@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       :followers,
       :likes
     ).find(params[:user_id])
-    @follow = User.find(@user.followers.map(&:id.to_proc))
+    @follow = User.find(@user.followers.map(&:follower_id.to_proc))
   end
 
   def likes

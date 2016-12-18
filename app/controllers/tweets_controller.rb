@@ -10,10 +10,22 @@ class TweetsController < ApplicationController
   end
 
   def create
-    current_user.tweets.create(
+    tweet = current_user.tweets.create(
       content: params[:content],
       parent_tweet_id: params[:parent_tweet_id]
     )
+
+    hashtags = params[:content].scan(/\B#\w+/)
+
+    hashtags.each do |hashtag|
+      existing_hashtag = Hashtag.find(term: hashtag)
+
+      if (existing_hashtag.nil?)
+        tweet.hashtags.create(term: hashtag)
+      else
+        TweetHashtag.create(hashtag_id: existing_hashtag.id, tweet_id: tweet.id)
+      end
+    end
 
     redirect_to tilts_path
   end

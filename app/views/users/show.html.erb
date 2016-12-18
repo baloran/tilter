@@ -7,7 +7,7 @@
         <%= render "components/profile-overview-general", user: @user %>
         <%= render "components/profile-overview-buttons" %>
       </div>
-      <%= render "components/profile-overview-about" %>
+      <%= render "components/profile-overview-about", user: @user %>
     <% end %>
     <%# render "components/mutual-follow" %>
     <%# render "components/profile-medias" %>

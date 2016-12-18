@@ -21,17 +21,19 @@ class TweetsController < ApplicationController
       hashtag.slice!(0) # Remove `#` from the hashtag
       existing_hashtag = Hashtag.where(term: hashtag).first
 
-      if (existing_hashtag.nil?)
+      if existing_hashtag.nil?
         tweet.hashtags.create(term: hashtag)
       else
         TweetHashtag.create(hashtag_id: existing_hashtag.id, tweet_id: tweet.id)
       end
     end
 
-    redirect_to tilts_path
+    redirect_to tilt_path(tweet)
   end
 
   def show
-    # Get a single tilt here
+    @tilt = Tweet.find(params[:id])
+    @root = @tilt.root if @tilt.root != @tilt
+    @answers = @tilt.children
   end
 end

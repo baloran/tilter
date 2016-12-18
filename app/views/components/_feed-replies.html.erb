@@ -1,0 +1,31 @@
+<section class="feed block">
+  <div class="feed__row feed__row--with-reply">
+    <%= render "components/profile-picture", user: @tilt.user %>
+    <%= render "components/tilt", tilt: @tilt %>
+  </div>
+
+  <% @answers.each_with_index do |tilt, index| %>
+    <div class="feed__row <%= 'feed__row--with-reply' if index != @answers.length - 1 %>">
+      <%= render :partial => "components/profile-picture", locals: {
+        user: tilt.user
+      } %>
+      <%= render :partial => "components/tilt", locals: { tilt: tilt } %>
+    </div>
+
+    <div class="feed__row feed__row--hidden">
+      <%= render :partial => "components/profile-picture", locals: {
+        user: current_user
+      } %>
+
+      <%= render :partial => "components/add", locals: {
+        class_active: 'add--active',
+        class_reply: 'add--reply',
+        parent: tilt
+      } %>
+    </div>
+  <% end %>
+
+  <!-- <div class="feed__load">
+    <button class="cta cta--fill">Load more</button>
+  </div> -->
+</section>

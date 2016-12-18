@@ -32,6 +32,7 @@ class TweetsController < ApplicationController
   end
 
   def show
-    # Get a single tilt here
+    @tilt = Tweet.find(params[:id])
+    @answers = @tilt.children
   end
 end

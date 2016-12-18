@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     get '/following' => 'users#following'
     get '/followers' => 'users#followers'
     get '/likes' => 'users#likes'
+    get '/like/:tweet_id' => 'likes#toggle_likes', as: :toggle_likes
   end
 end

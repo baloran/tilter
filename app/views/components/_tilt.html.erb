@@ -31,8 +31,10 @@
 		</div>
 
 		<div class="tilt__action">
-			<%= embedded_svg('icons/strike.svg') %>
-			<span><%= number_to_human(tilt.likes.count) %></span>
+      <%= link_to user_toggle_likes_path(user_id: current_user.id, tweet_id: tilt.id), remote: true do %>
+  			<%= embedded_svg('icons/strike.svg') %>
+  			<span><%= number_to_human(tilt.likes.count) %></span>
+      <% end %>
 		</div>
 
     <!-- <div class="tilt__action tilt__action--more ">

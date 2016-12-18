@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }, path: '', path_names: {
     sign_in: 'sign-in', 
     sign_out: 'sign-out',
-    registration: 'sign-up'
+    registration: 'user'
   }
 
   get '/:username', to: 'users/profiles#profile'
@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/users/:id/following' => 'users#following'
   get '/users/:id/followers' => 'users#followers'
   get '/users/:id/likes' => 'users#likes'
+  get '/users/follow/:followed_id' => 'users/relationships#toggleFollow', as: :toggle_follow_user
 end

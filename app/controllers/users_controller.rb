@@ -4,7 +4,7 @@ class UsersController < ApplicationController
       :tweets,
       :follows,
       :followers,
-      :likes,
+      :likes
     ).find(params[:id])
   end
 

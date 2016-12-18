@@ -13,7 +13,6 @@ RSpec.describe 'Routes', type: :routing do
   end
 
   it 'handles custom users routes properly' do
-
     expect(get: '/users/1').to route_to(
       controller: 'users',
       action: 'show',
